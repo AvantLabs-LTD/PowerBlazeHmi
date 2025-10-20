@@ -22,9 +22,9 @@ MainWindow::MainWindow(QWidget *parent)
     // Apply to both group boxes
     applyShadow(ui->groupBox_bus_monitor);
     applyShadow(ui->navBarGroup);
-    applyShadow(ui->chargingBox);
     applyShadow(ui->CommBox);
     applyShadow(ui->analogInputBox);
+    applyShadow(ui->indicatorsgroupBox);
     // applyShadow(ui->chargingBox_2);
 
     QPixmap logo(":/Resources/logo_white_bg.png");
@@ -35,8 +35,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowIcon(icon);
 
     this->showMaximized();
-    this->setWindowTitle("PowerBlazev2.1.0");
-    ui->versionLabel->setText("v2.1.0");
+    this->setWindowTitle("PowerBlazev1.0.0");
+    ui->versionLabel->setText("v1.0.0");
 
 
     timeTimer = new QTimer(this);
@@ -69,29 +69,49 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timer, &QTimer::timeout, this, &MainWindow::updateAll);
     timer->start(100);
 
-    ui->batteryVoltageDisp->display(formatFloat(0));
-    ui->batteryCurrentDisp->display(formatFloat(0));
-    ui->InasVoltageDisp->display(formatFloat(0));
-    ui->InasCurrentDisp->display(formatFloat(0));
-    ui->dataLinkVoltageDisp->display(formatFloat(0));
-    ui->dataLinkCurrentDisp->display(formatFloat(0));
-    ui->seekerVoltageDisp->display(formatFloat(0));
-    ui->seekerCurrentDisp->display(formatFloat(0));
-    ui->MagnoSoleVoltageDisp->display(formatFloat(0));
-    ui->MagnoSoleCurrentDisp->display(formatFloat(0));
-    // ui->twelveVVoltageDisp->display(formatFloat(0));
-    // ui->twelveVCurrentDisp->display(formatFloat(0));
-    ui->ActuatorOneVoltageDisp->display(formatFloat(0));
-    ui->ActuatorOneCurrentDisp->display(formatFloat(0));
-    ui->ActuatorTwoVoltageDisp->display(formatFloat(0));
-    ui->ActuatorTwoCurrentDisp->display(formatFloat(0));
-    ui->ActuatorThreeVoltageDisp->display(formatFloat(0));
-    ui->ActuatorThreeCurrentDisp->display(formatFloat(0));
-    ui->fiveVoltVoltageDisp->display(formatFloat(0));
-    ui->fiveVoltCurrentDisp->display(formatFloat(0));
-    ui->spareVolt1Disp->display(formatFloat(0));
-    ui->spareVolt2Disp->display(formatFloat(0));
-    ui->batteryPowerDisp->display(formatFloat(0));
+    ui->avionicBatteryVolate->display(formatFloat(0));
+    ui->avionicBatteryCurrent->display(formatFloat(0));
+    ui->GeneratorCurrent->display(formatFloat(0));
+    ui->GeneratorVoltage->display(formatFloat(0));
+    ui->groundSupplyVoltage->display(formatFloat(0));
+    ui->groundSupplyCurrent->display(formatFloat(0));
+    ui->vBusVoltage->display(formatFloat(0));
+    ui->vBusCurrent->display(formatFloat(0));
+    ui->b3_8v2Voltage->display(formatFloat(0));
+    ui->b3_8v2Current->display(formatFloat(0));
+    ui->b1_24vVoltage->display(formatFloat(0));
+    ui->b1_24vCurrent->display(formatFloat(0));
+    ui->b1A_24vVoltage->display(formatFloat(0));
+    ui->b1A_24vCurrent->display(formatFloat(0));
+    ui->b2_8v2Voltage->display(formatFloat(0));
+    ui->b2_8v2Current->display(formatFloat(0));
+    ui->b3_8v2Voltage->display(formatFloat(0));
+    ui->b3_8v2Current->display(formatFloat(0));
+    ui->b3a_8v2Voltage->display(formatFloat(0));
+    ui->b3a_8v2Current->display(formatFloat(0));
+    ui->b4_12vVoltage->display(formatFloat(0));
+    ui->b4_12vCurrent->display(formatFloat(0));
+    ui->b4a_12vVoltage->display(formatFloat(0));
+    ui->b4a_12vCurrent->display(formatFloat(0));
+    ui->b5_24vVoltage->display(formatFloat(0));
+    ui->b5_24vCurrent->display(formatFloat(0));
+    ui->b5a_24vVoltage->display(formatFloat(0));
+    ui->b5a_24vCurrent->display(formatFloat(0));
+    ui->b5b_24vVoltage->display(formatFloat(0));
+    ui->b5b_24vCurrent->display(formatFloat(0));
+    ui->b6_5vVoltage->display(formatFloat(0));
+    ui->b6_5vCurrent->display(formatFloat(0));
+    ui->ain_1Voltage->display(formatFloat(0));
+    ui->ain_2Voltage->display(formatFloat(0));
+    ui->ain_3Voltage->display(formatFloat(0));
+    ui->temperature->display(formatFloat(0));
+    ui->debugV1->display(formatFloat(0));
+    ui->debugC1->display(formatFloat(0));
+    ui->debugV2->display(formatFloat(0));
+    ui->debugV3->display(formatFloat(0));
+    ui->debugV4->display(formatFloat(0));
+    ui->debugV5->display(formatFloat(0));
+    ui->debugV6->display(formatFloat(0));
 
     // ui->debugInfoBtn->setIcon(QIcon(":/Resources/searching.png"));
     // ui->spareVolt1Disp->setVisible(false);
@@ -183,61 +203,76 @@ void MainWindow::updateAll(){
     }
     ui->pktCounter->display(static_cast<int>(dataToShow.PacketCounter));
     ui->frameTime->display(formatFloat(static_cast<float>(dataToShow.FrameTime) / 1000));
-    ui->batteryVoltageDisp->display(formatFloat(static_cast<float>(dataToShow.BatteryVoltage) / 1000));
-    ui->batteryCurrentDisp->display(formatFloat(static_cast<float>(dataToShow.BatteryCurrent) / 1000));
-    float current_mA = roundf((dataToShow.BatteryCurrent / 1000.0f) * 10.0f) / 10.0f;
-    float voltage_V  = roundf((dataToShow.BatteryVoltage  / 1000.0f) * 10.0f) / 10.0f;
 
-    float power_W = current_mA * voltage_V; // since mA * V = mW, divide by 1000 → W
+    ui->avionicBatteryVolate->display(formatFloat(dataToShow.avionicBatteryVoltage));
+    ui->avionicBatteryCurrent->display(formatFloat(dataToShow.avionicBatteryCurrent));
+    ui->GeneratorCurrent->display(formatFloat(dataToShow.generatorCurrent));
+    ui->GeneratorVoltage->display(formatFloat(dataToShow.generatorVoltage));
+    ui->groundSupplyVoltage->display(formatFloat(dataToShow.groundSupplyVoltage));
+    ui->groundSupplyCurrent->display(formatFloat(dataToShow.groundSupplyCurrent));
+    ui->vBusVoltage->display(formatFloat(dataToShow.vBusVoltage));
+    ui->vBusCurrent->display(formatFloat(dataToShow.vBusCurrent));
+    ui->b3_8v2Voltage->display(formatFloat(dataToShow.b3v2_8VoltVoltage));
+    ui->b3_8v2Current->display(formatFloat(dataToShow.b3v2_8VoltCurrent));
+    ui->b1_24vVoltage->display(formatFloat(dataToShow.b1_24VoltVoltage));
+    ui->b1_24vCurrent->display(formatFloat(dataToShow.b1_24VoltCurrent));
+    ui->b1A_24vVoltage->display(formatFloat(dataToShow.b1A_24VoltVoltage));
+    ui->b1A_24vCurrent->display(formatFloat(dataToShow.b1A_24VoltCurrent));
+    ui->b2_8v2Voltage->display(formatFloat(dataToShow.b2v2_8VoltVoltage));
+    ui->b2_8v2Current->display(formatFloat(dataToShow.b2v2_8VoltCurrent));
+    ui->b3_8v2Voltage->display(formatFloat(dataToShow.b3v2_8VoltVoltage));
+    ui->b3_8v2Current->display(formatFloat(dataToShow.b3v2_8VoltCurrent));
+    ui->b3a_8v2Voltage->display(formatFloat(dataToShow.b3av2_8VoltVoltage));
+    ui->b3a_8v2Current->display(formatFloat(dataToShow.b3av2_8VoltCurrent));
+    ui->b4_12vVoltage->display(formatFloat(dataToShow.b4_12VoltVoltage));
+    ui->b4_12vCurrent->display(formatFloat(dataToShow.b4_12VoltCurrent));
+    ui->b4a_12vVoltage->display(formatFloat(dataToShow.b4a_12VoltVoltage));
+    ui->b4a_12vCurrent->display(formatFloat(dataToShow.b4a_12VoltCurrent));
+    ui->b5_24vVoltage->display(formatFloat(dataToShow.b5_24VoltVoltage));
+    ui->b5_24vCurrent->display(formatFloat(dataToShow.b5_24VoltCurrent));
+    ui->b5a_24vVoltage->display(formatFloat(dataToShow.b5a_24VoltVoltage));
+    ui->b5a_24vCurrent->display(formatFloat(dataToShow.b5a_24VoltCurrent));
+    ui->b5b_24vVoltage->display(formatFloat(dataToShow.b5b_24VoltVoltage));
+    ui->b5b_24vCurrent->display(formatFloat(dataToShow.b5b_24VoltCurrent));
+    ui->b6_5vVoltage->display(formatFloat(dataToShow.b6_5VoltVoltage));
+    ui->b6_5vCurrent->display(formatFloat(dataToShow.b6_5VoltCurrent));
+    ui->ain_1Voltage->display(formatFloat(dataToShow.aIn1Voltage));
+    ui->ain_2Voltage->display(formatFloat(dataToShow.aIn2Voltage));
+    ui->ain_3Voltage->display(formatFloat(dataToShow.aIn3Voltage));
+    ui->temperature->display(formatFloat(dataToShow.tempSensorInternal));
+    ui->debugV1->display(formatFloat(dataToShow.debugVoltage1_BST));
+    ui->debugC1->display(formatFloat(dataToShow.debugCurrent1_BST));
+    ui->debugV2->display(formatFloat(dataToShow.debugVoltage2_AVIN));
+    ui->debugV3->display(formatFloat(dataToShow.debugVoltage3_SP1));
+    ui->debugV4->display(formatFloat(dataToShow.debugVoltage4_SP2));
+    ui->debugV5->display(formatFloat(dataToShow.debugVoltage5_SP3));
+    ui->debugV6->display(formatFloat(dataToShow.debugVoltage6_VIN_BP));
 
-    ui->batteryPowerDisp->display(formatFloat(power_W));
-    ui->InasVoltageDisp->display(formatFloat(dataToShow.InasVoltage / 1000));
-    ui->InasCurrentDisp->display(formatFloat(static_cast<float>(dataToShow.InasCurrent) / 1000));
-    ui->dataLinkVoltageDisp->display(formatFloat(static_cast<float>(dataToShow.DataLinkVoltage) / 1000));
-    ui->dataLinkCurrentDisp->display(formatFloat(static_cast<float>(dataToShow.DataLinkCurrent) / 1000));
-    ui->seekerVoltageDisp->display(formatFloat(static_cast<float>(dataToShow.SeekerVoltage) / 1000));
-    ui->seekerCurrentDisp->display(formatFloat(static_cast<float>(dataToShow.SeekerCurrent) / 1000));
-    ui->MagnoSoleVoltageDisp->display(formatFloat(static_cast<float>(dataToShow.MagnoSoleVoltage) / 1000));
-    ui->MagnoSoleCurrentDisp->display(formatFloat(static_cast<float>(dataToShow.MagnoSoleCurrent) / 1000));
-    ui->ActuatorOneVoltageDisp->display(formatFloat(static_cast<float>(dataToShow.ActuatorOneVoltage) / 1000));
-    ui->ActuatorOneCurrentDisp->display(formatFloat(static_cast<float>(dataToShow.ActuatorOneCurrent) / 1000));
-    ui->ActuatorTwoVoltageDisp->display(formatFloat(static_cast<float>(dataToShow.ActuatorTwoVoltage) / 1000));
-    ui->ActuatorTwoCurrentDisp->display(formatFloat(static_cast<float>(dataToShow.ActuatorTwoCurrent) / 1000));
-    ui->ActuatorThreeVoltageDisp->display(formatFloat(static_cast<float>(dataToShow.ActuatorThreeVoltage) / 1000));
-    ui->ActuatorThreeCurrentDisp->display(formatFloat(static_cast<float>(dataToShow.ActuatorThreeCurrent) / 1000));
-    ui->fiveVoltVoltageDisp->display(formatFloat(static_cast<float>(dataToShow.fiveVoltVoltage) / 1000));
-    ui->fiveVoltCurrentDisp->display(formatFloat(static_cast<float>(dataToShow.fiveVoltCurrent) / 1000));
-    ui->spareVolt1Disp->display(formatFloat(static_cast<float>(dataToShow.spareVolt1) / 1000));
-    ui->spareVolt2Disp->display(formatFloat(static_cast<float>(dataToShow.spareVolt2) / 1000));
-    ui->temperature->display(dataToShow.internalTemp);
 
 
-    if(dataToShow.SeekerStatus){
-        ui->seekerCheckBox->setCheckState(Qt::Checked);
-    }else{
-        ui->seekerCheckBox->setCheckState(Qt::Unchecked);
-
-    }
-    if(dataToShow.TwelveVoltStatus){
-        ui->twelveVoltCheckBox->setCheckState(Qt::Checked);
-    }else{
-        ui->twelveVoltCheckBox->setCheckState(Qt::Unchecked);
-
-    }
-
-    // if(dataToShow.TwelveVoltStatus){
-    //     ui->twelveVCtrlCheckBox->setCheckState(Qt::Checked);
-    // }else{
-    //     ui->twelveVCtrlCheckBox->setCheckState(Qt::Unchecked);
-
-    // }
     ui->cmdCount->display(dataToShow.commandCounter);
-    ui->lastCmd->display(dataToShow.lastCommand);
-    ui->pktErrorCountDisp->display(dataToShow.pktErrorCounter);
-    ui->headerErrorCountDisp->display(dataToShow.headerErrCounter);
+    ui->lastCmd->display(dataToShow.lastAppliedCommand);
+    ui->pktErrorCountDisp->display(dataToShow.packetErrorCounter);
+    ui->headerErrorCountDisp->display(dataToShow.headerErrorCounter);
     ui->crcErrorCountDisp->display(dataToShow.crcErrorCounter);
-    ui->serialTimeoutErrorCount->display(dataToShow.serialTimeoutCounter);
-    ui->lengthMismatchErrorCount->display(dataToShow.frameLengthMismatchErrCounter);
+    ui->serialTimeoutErrorCount->display(dataToShow.serialTimeoutErrorCounter);
+    ui->lengthMismatchErrorCount->display(dataToShow.frameLengthMismatchErrorCounter);
+
+
+    dataToShow.b1a_24V_status ? ui->b1aCheckbox->setCheckState(Qt::Checked) : ui->b1aCheckbox->setCheckState(Qt::Unchecked);
+    dataToShow.b3a_8V2_status ? ui->b3aCheckBox->setCheckState(Qt::Checked) : ui->b3aCheckBox->setCheckState(Qt::Unchecked);
+    dataToShow.b4a_12V_status ? ui->b4aCheckbox->setCheckState(Qt::Checked) : ui->b4aCheckbox->setCheckState(Qt::Unchecked);
+    dataToShow.b5a_24V_status ? ui->b5aCheckBox->setCheckState(Qt::Checked) : ui->b5aCheckBox->setCheckState(Qt::Unchecked);
+    dataToShow.b5b_24V_status ? ui->b5bCheckBox->setCheckState(Qt::Checked) : ui->b5bCheckBox->setCheckState(Qt::Unchecked);
+
+
+    dataToShow.dOutStatus1 ? ui->dout1CHeckbox->setCheckState(Qt::Checked) : ui->dout1CHeckbox->setCheckState(Qt::Unchecked);
+    dataToShow.dOutStatus2 ? ui->dout2Checkbox->setCheckState(Qt::Checked) : ui->dout2Checkbox->setCheckState(Qt::Unchecked);
+    dataToShow.pwmStatus1 ? ui->pwm1Checkbox->setCheckState(Qt::Checked) : ui->pwm1Checkbox->setCheckState(Qt::Unchecked);
+    dataToShow.pwmStatus2 ? ui->pwm2Checkbox->setCheckState(Qt::Checked) : ui->pwm2Checkbox->setCheckState(Qt::Unchecked);
+    dataToShow.pyroArmStatus ? ui->pyraArmCheckbox->setCheckState(Qt::Checked) : ui->pyraArmCheckbox->setCheckState(Qt::Unchecked);
+    dataToShow.pyroAgnStatus ? ui->pyroIgnCheckbox->setCheckState(Qt::Checked) : ui->pyroIgnCheckbox->setCheckState(Qt::Unchecked);
+    dataToShow.batSwitchStatus ? ui->batSwitchCheckbox->setCheckState(Qt::Checked) : ui->batSwitchCheckbox->setCheckState(Qt::Unchecked);
 
 
 
@@ -350,42 +385,57 @@ QString MainWindow::stateparamsToCsv() {
     QString csv;
     QTextStream stream(&csv);
 
-    // Adding boolean values
     stream << dataToShow.PacketCounter << ","
            << dataToShow.FrameTime << ","
-           << dataToShow.BatteryVoltage << ","
-           << dataToShow.BatteryCurrent << ","
-           << dataToShow.InasVoltage << ","
-           << dataToShow.InasCurrent << ","
-           << dataToShow.DataLinkVoltage << ","
-           << dataToShow.DataLinkCurrent << ","
-           << dataToShow.SeekerVoltage << ","
-           << dataToShow.SeekerCurrent << ","
-           << dataToShow.MagnoSoleVoltage << ","
-           << dataToShow.MagnoSoleCurrent << ","
-           << dataToShow.TwelveVoltVoltage << ","
-           << dataToShow.TwelveVoltCurrent << ","
-           << dataToShow.ActuatorOneVoltage << ","
-           << dataToShow.ActuatorOneCurrent << ","
-           << dataToShow.ActuatorTwoVoltage << ","
-           << dataToShow.ActuatorTwoCurrent << ","
-           << dataToShow.ActuatorThreeVoltage << ","
-           << dataToShow.ActuatorThreeCurrent << ","
-           << dataToShow.fiveVoltVoltage << ","
-           << dataToShow.fiveVoltCurrent << ","
-           << dataToShow.internalTemp << ","
-           << dataToShow.DataLinkStatus << ","
-           << dataToShow.SeekerStatus << ","
-           << dataToShow.TwelveVoltStatus << ","
+
+           // --- Power Channels ---
+           << dataToShow.avionicBatteryVoltage << "," << dataToShow.avionicBatteryCurrent << ","
+           << dataToShow.generatorVoltage << "," << dataToShow.generatorCurrent << ","
+           << dataToShow.groundSupplyVoltage << "," << dataToShow.groundSupplyCurrent << ","
+           << dataToShow.vBusVoltage << "," << dataToShow.vBusCurrent << ","
+           << dataToShow.b1_24VoltVoltage << "," << dataToShow.b1_24VoltCurrent << ","
+           << dataToShow.b1A_24VoltVoltage << "," << dataToShow.b1A_24VoltCurrent << ","
+           << dataToShow.b2v2_8VoltVoltage << "," << dataToShow.b2v2_8VoltCurrent << ","
+           << dataToShow.b3v2_8VoltVoltage << "," << dataToShow.b3v2_8VoltCurrent << ","
+           << dataToShow.b3av2_8VoltVoltage << "," << dataToShow.b3av2_8VoltCurrent << ","
+           << dataToShow.b4_12VoltVoltage << "," << dataToShow.b4_12VoltCurrent << ","
+           << dataToShow.b4a_12VoltVoltage << "," << dataToShow.b4a_12VoltCurrent << ","
+           << dataToShow.b5_24VoltVoltage << "," << dataToShow.b5_24VoltCurrent << ","
+           << dataToShow.b5a_24VoltVoltage << "," << dataToShow.b5a_24VoltCurrent << ","
+           << dataToShow.b5b_24VoltVoltage << "," << dataToShow.b5b_24VoltCurrent << ","
+           << dataToShow.b6_5VoltVoltage << "," << dataToShow.b6_5VoltCurrent << ","
+
+           // --- Analog Inputs ---
+           << dataToShow.aIn1Voltage << "," << dataToShow.aIn2Voltage << "," << dataToShow.aIn3Voltage << ","
+           << dataToShow.tempSensorInternal << ","
+
+           // --- Debug Voltages/Currents ---
+           << dataToShow.debugVoltage1_BST << "," << dataToShow.debugCurrent1_BST << ","
+           << dataToShow.debugVoltage2_AVIN << "," << dataToShow.debugVoltage3_SP1 << ","
+           << dataToShow.debugVoltage4_SP2 << "," << dataToShow.debugVoltage5_SP3 << ","
+           << dataToShow.debugVoltage6_VIN_BP << ","
+
+           // --- Boolean Flags ---
+           << dataToShow.dOutStatus1 << "," << dataToShow.dOutStatus2 << ","
+           << dataToShow.pwmStatus1 << "," << dataToShow.pwmStatus2 << ","
+           << dataToShow.pyroArmStatus << "," << dataToShow.pyroAgnStatus << ","
+           << dataToShow.batSwitchStatus << "," << dataToShow.spareFlag << ","
+           << dataToShow.b1a_24V_status << "," << dataToShow.b3a_8V2_status << ","
+           << dataToShow.b4a_12V_status << "," << dataToShow.b5a_24V_status << ","
+           << dataToShow.b5b_24V_status << "," << dataToShow.spareFlag2 << ","
+           << dataToShow.spareFlag3 << "," << dataToShow.spareFlag4 << ","
+
+           // --- Engine & Diagnostics ---
+           << dataToShow.engineRPM << ","
            << dataToShow.commandCounter << ","
-           << dataToShow.lastCommand << ","
-           << dataToShow.pktErrorCounter << ","
-           << dataToShow.headerErrCounter << ","
+           << dataToShow.lastAppliedCommand << ","
+
+           // --- Error Counters ---
+           << dataToShow.packetErrorCounter << ","
+           << dataToShow.headerErrorCounter << ","
            << dataToShow.crcErrorCounter << ","
-           << dataToShow.serialTimeoutCounter << ","
-           << dataToShow.frameLengthMismatchErrCounter;
-
-
+           << dataToShow.serialTimeoutErrorCounter << ","
+           << dataToShow.frameLengthMismatchErrorCounter;
 
     return csv;
 }
@@ -393,45 +443,71 @@ QString MainWindow::stateparamsToCsv() {
 QString MainWindow::getCSVHeaders() {
     QStringList headers;
 
-    headers << "Timestamp"
-            << "Packet Counter"
-            << "Frame Time"
-            << "Battery Input Voltage"
-            << "Battery Input Current"
-            << "INAS Bus Voltage"
-            << "INAS Bus Current"
-            << "DataLink Bus Voltage"
-            << "DataLink Bus Current"
-            << "Seeker Bus Voltage"
-            << "Seeker Bus Current"
-            << "MagnoSole Bus Voltage"
-            << "MagnoSole Bus Current"
-            << "12V Ctrl Bus Voltage"
-            << "12V Ctrl Bus Current"
-            << "Actuator One Bus Voltage"
-            << "Actuator One Bus Current"
-            << "Actuator Two Bus Voltage"
-            << "Actuator Two Bus Current"
-            << "Actuator Three Bus Voltage"
-            << "Actuator Three Bus Current"
-            << "5V Bus Voltage"
-            << "5V Bus Current"
-            << "Temperature"
-            << "DataLink Bus Status"
-            << "Seeker Bus Status"
-            << "12V Ctrl Bus Status"
-            << "Command Counter"
-            << "Last Command"
-            << "Packet Error Counter"
-            << "Header Error Counter"
-            << "CRC Error Counter"
-            << "Serial Timeout Error Counter"
-            << "Frame Length Mismatch Error Counter";
+    headers
+        << "Packet Counter"
+        << "Frame Time"
 
+        // --- Power Channels ---
+        << "Avionic Battery Voltage" << "Avionic Battery Current"
+        << "Generator Voltage" << "Generator Current"
+        << "Ground Supply Voltage" << "Ground Supply Current"
+        << "VBus Voltage" << "VBus Current"
+        << "B1 24V Voltage" << "B1 24V Current"
+        << "B1A 24V Voltage" << "B1A 24V Current"
+        << "B2 2.8V Voltage" << "B2 2.8V Current"
+        << "B3 2.8V Voltage" << "B3 2.8V Current"
+        << "B3A 2.8V Voltage" << "B3A 2.8V Current"
+        << "B4 12V Voltage" << "B4 12V Current"
+        << "B4A 12V Voltage" << "B4A 12V Current"
+        << "B5 24V Voltage" << "B5 24V Current"
+        << "B5A 24V Voltage" << "B5A 24V Current"
+        << "B5B 24V Voltage" << "B5B 24V Current"
+        << "B6 5V Voltage" << "B6 5V Current"
 
+        // --- Analog Inputs ---
+        << "Analog In 1 Voltage"
+        << "Analog In 2 Voltage"
+        << "Analog In 3 Voltage"
+        << "Internal Temp Sensor"
 
+        // --- Debug Values ---
+        << "Debug Voltage 1 (BST)"
+        << "Debug Current 1 (BST)"
+        << "Debug Voltage 2 (AVIN)"
+        << "Debug Voltage 3 (SP1)"
+        << "Debug Voltage 4 (SP2)"
+        << "Debug Voltage 5 (SP3)"
+        << "Debug Voltage 6 (VIN_BP)"
 
+        // --- Boolean Flags ---
+        << "DOut Status 1"
+        << "DOut Status 2"
+        << "PWM Status 1"
+        << "PWM Status 2"
+        << "Pyro Arm Status"
+        << "Pyro Agn Status"
+        << "Battery Switch Status"
+        << "Spare Flag"
+        << "B1A 24V Status"
+        << "B3A 8V2 Status"
+        << "B4A 12V Status"
+        << "B5A 24V Status"
+        << "B5B 24V Status"
+        << "Spare Flag 2"
+        << "Spare Flag 3"
+        << "Spare Flag 4"
 
+        // --- Engine & Diagnostics ---
+        << "Engine RPM"
+        << "Command Counter"
+        << "Last Applied Command"
+
+        // --- Error Counters ---
+        << "Packet Error Counter"
+        << "Header Error Counter"
+        << "CRC Error Counter"
+        << "Serial Timeout Error Counter"
+        << "Frame Length Mismatch Error Counter";
 
     return headers.join(", ");
 }
@@ -459,57 +535,7 @@ QString MainWindow::getCmdLogCSVHeaders() {
 
 
 
-void MainWindow::on_seekerCheckBox_clicked()
-{
-    if(ui->seekerCheckBox->checkState() == Qt::Checked){
-        Command cmd(SEEKER_CMD_ID, On);
-        sendCommand(cmd);
-    }else{
-        Command cmd(SEEKER_CMD_ID, Off);
-        sendCommand(cmd);
-
-    }
-}
-
-
-void MainWindow::on_twelveVCtrlCheckBox_clicked()
-{
-    // if(ui->twelveVCtrlCheckBox->checkState() == Qt::Checked){
-    //     Command cmd(TWELVE_V_CMD_ID, On);
-    //     sendCommand(cmd);
-    // }else{
-    //     Command cmd(TWELVE_V_CMD_ID, Off);
-    //     sendCommand(cmd);
-
-    // }
-}
 
 
 
-void MainWindow::on_debugInfoBtn_clicked()
-{
-    static bool visible = false;
-
-    // visible = !visible;
-    // ui->spareVolt1Disp->setVisible(visible);
-    // ui->spareVolt2Disp->setVisible(visible);
-    // ui->spVolt1Lbl->setVisible(visible);
-    // ui->spVolt2Lbl->setVisible(visible);
-
-}
-
-
-
-
-void MainWindow::on_twelveVoltCheckBox_clicked()
-{
-    if(ui->twelveVoltCheckBox->checkState() == Qt::Checked){
-        Command cmd(TWELVE_V_CMD_ID, On);
-        sendCommand(cmd);
-    }else{
-        Command cmd(TWELVE_V_CMD_ID, Off);
-        sendCommand(cmd);
-
-    }
-}
 

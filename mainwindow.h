@@ -38,14 +38,10 @@ private slots:
     void onTimeTimerTimeout();
 
 
-    void on_seekerCheckBox_clicked();
-
-    void on_twelveVCtrlCheckBox_clicked();
-
-    void on_debugInfoBtn_clicked();
 
 
-    void on_twelveVoltCheckBox_clicked();
+
+
 
 private:
     Ui::MainWindow *ui;

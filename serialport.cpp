@@ -62,79 +62,102 @@ void SerialPort::onDataRx()
 
 }
 
-Packet SerialPort::DeSerializePacket(){
-        Packet pkt{};
-        QDataStream stream(buffer);
-        stream.setByteOrder(QDataStream::LittleEndian); // assuming your protocol is little-endian
+Packet SerialPort::DeSerializePacket()
+{
+    Packet pkt{};
+    QDataStream stream(buffer);
+    stream.setByteOrder(QDataStream::LittleEndian); // Assuming little-endian protocol
 
-        stream >> pkt.PacketCounter;
-        stream >> pkt.FrameTime;
+    // --- Header ---
+    stream >> pkt.PacketCounter;
+    stream >> pkt.FrameTime;
 
-        stream >> pkt.BatteryVoltage;
-        stream >> pkt.BatteryCurrent;
-        stream >> pkt.InasVoltage;
-        stream >> pkt.InasCurrent;
-        stream >> pkt.DataLinkVoltage;
-        stream >> pkt.DataLinkCurrent;
-        stream >> pkt.SeekerVoltage;
-        stream >> pkt.SeekerCurrent;
-        stream >> pkt.MagnoSoleVoltage;
-        stream >> pkt.MagnoSoleCurrent;
-        stream >> pkt.TwelveVoltVoltage;
-        stream >> pkt.TwelveVoltCurrent;
-        stream >> pkt.ActuatorOneVoltage;
-        stream >> pkt.ActuatorOneCurrent;
-        stream >> pkt.ActuatorTwoVoltage;
-        stream >> pkt.ActuatorTwoCurrent;
-        stream >> pkt.ActuatorThreeVoltage;
-        stream >> pkt.ActuatorThreeCurrent;
-        stream >> pkt.fiveVoltVoltage;
-        stream >> pkt.fiveVoltCurrent;
+    // --- Voltages & Currents ---
+    stream >> pkt.avionicBatteryVoltage;
+    stream >> pkt.avionicBatteryCurrent;
+    stream >> pkt.generatorVoltage;
+    stream >> pkt.generatorCurrent;
+    stream >> pkt.groundSupplyVoltage;
+    stream >> pkt.groundSupplyCurrent;
+    stream >> pkt.vBusVoltage;
+    stream >> pkt.vBusCurrent;
+    stream >> pkt.b1_24VoltVoltage;
+    stream >> pkt.b1_24VoltCurrent;
+    stream >> pkt.b1A_24VoltVoltage;
+    stream >> pkt.b1A_24VoltCurrent;
+    stream >> pkt.b2v2_8VoltVoltage;
+    stream >> pkt.b2v2_8VoltCurrent;
+    stream >> pkt.b3v2_8VoltVoltage;
+    stream >> pkt.b3v2_8VoltCurrent;
+    stream >> pkt.b3av2_8VoltVoltage;
+    stream >> pkt.b3av2_8VoltCurrent;
+    stream >> pkt.b4_12VoltVoltage;
+    stream >> pkt.b4_12VoltCurrent;
+    stream >> pkt.b4a_12VoltVoltage;
+    stream >> pkt.b4a_12VoltCurrent;
+    stream >> pkt.b5_24VoltVoltage;
+    stream >> pkt.b5_24VoltCurrent;
+    stream >> pkt.b5a_24VoltVoltage;
+    stream >> pkt.b5a_24VoltCurrent;
+    stream >> pkt.b5b_24VoltVoltage;
+    stream >> pkt.b5b_24VoltCurrent;
+    stream >> pkt.b6_5VoltVoltage;
+    stream >> pkt.b6_5VoltCurrent;
 
-        stream >> pkt.spareVolt1;
-        stream >> pkt.spareVolt2;
+    // --- Analog Inputs & Temp ---
+    stream >> pkt.aIn1Voltage;
+    stream >> pkt.aIn2Voltage;
+    stream >> pkt.aIn3Voltage;
+    stream >> pkt.tempSensorInternal;
 
-        stream >> pkt.internalTemp;
+    // --- Debug readings ---
+    stream >> pkt.debugVoltage1_BST;
+    stream >> pkt.debugCurrent1_BST;
+    stream >> pkt.debugVoltage2_AVIN;
+    stream >> pkt.debugVoltage3_SP1;
+    stream >> pkt.debugVoltage4_SP2;
+    stream >> pkt.debugVoltage5_SP3;
+    stream >> pkt.debugVoltage6_VIN_BP;
 
-        quint8 bitmap;
-        stream >> bitmap;
-        pkt.DataLinkStatus   = bitmap & 0x01;
-        pkt.SeekerStatus     = bitmap & 0x02;
-        pkt.TwelveVoltStatus = bitmap & 0x04;
+    // --- Boolean Flags (packed) ---
+    // Assuming they are serialized as bytes (8 bits = 8 bools)
+    quint8 flags1, flags2;
+    stream >> flags1;
+    stream >> flags2;
 
-        stream >> pkt.commandCounter;
-        stream >> pkt.lastCommand;
-        stream >> pkt.pktErrorCounter;
-        stream >> pkt.headerErrCounter;
-        stream >> pkt.crcErrorCounter;
-        stream >> pkt.serialTimeoutCounter;
-        stream >> pkt.frameLengthMismatchErrCounter;
+    // First byte (flags1)
+    pkt.dOutStatus1     = flags1 & 0x01;
+    pkt.dOutStatus2     = flags1 & 0x02;
+    pkt.pwmStatus1      = flags1 & 0x04;
+    pkt.pwmStatus2      = flags1 & 0x08;
+    pkt.pyroArmStatus   = flags1 & 0x10;
+    pkt.pyroAgnStatus   = flags1 & 0x20;
+    pkt.batSwitchStatus = flags1 & 0x40;
+    pkt.spareFlag       = flags1 & 0x80;
 
-        // --- Debug dump ---
-        // qDebug() << "PacketCounter:" << pkt.PacketCounter;
-        // qDebug() << "FrameTime:" << pkt.FrameTime;
-        // qDebug() << "Battery V/I:" << pkt.BatteryVoltage << pkt.BatteryCurrent;
-        // qDebug() << "INAS V/I:" << pkt.InasVoltage << pkt.InasCurrent;
-        // qDebug() << "DataLink V/I:" << pkt.DataLinkVoltage << pkt.DataLinkCurrent;
-        // qDebug() << "Seeker V/I:" << pkt.SeekerVoltage << pkt.SeekerCurrent;
-        // qDebug() << "MagnoSole V/I:" << pkt.MagnoSoleVoltage << pkt.MagnoSoleCurrent;
-        // qDebug() << "12V Ctrl V/I:" << pkt.TwelveVoltVoltage << pkt.TwelveVoltCurrent;
-        // qDebug() << "Actuator1 V/I:" << pkt.ActuatorOneVoltage << pkt.ActuatorOneCurrent;
-        // qDebug() << "Actuator2 V/I:" << pkt.ActuatorTwoVoltage << pkt.ActuatorTwoCurrent;
-        // qDebug() << "Actuator3 V/I:" << pkt.ActuatorThreeVoltage << pkt.ActuatorThreeCurrent;
-        // qDebug() << "5V V/I:" << pkt.fiveVoltVoltage << pkt.fiveVoltCurrent;
-        // qDebug() << "Internal Temp:" << pkt.internalTemp;
-        // qDebug() << "Statuses -> DataLink:" << pkt.DataLinkStatus
-        //          << " Seeker:" << pkt.SeekerStatus
-        //          << " 12V:" << pkt.TwelveVoltStatus;
-        // qDebug() << "Counters -> Cmd:" << pkt.commandCounter
-        //          << " LastCmd:" << pkt.lastCommand
-        //          << " PktErr:" << pkt.pktErrorCounter
-        //          << " HeaderErr:" << pkt.headerErrCounter
-        //          << " CrcErr:" << pkt.crcErrorCounter
-        //          << " TimeoutErr:" << pkt.serialTimeoutCounter
-        //          << " FrameLenErr:" << pkt.frameLengthMismatchErrCounter;
-        return pkt;
+    // Second byte (flags2)
+    pkt.b1a_24V_status  = flags2 & 0x01;
+    pkt.b3a_8V2_status  = flags2 & 0x02;
+    pkt.b4a_12V_status  = flags2 & 0x04;
+    pkt.b5a_24V_status  = flags2 & 0x08;
+    pkt.b5b_24V_status  = flags2 & 0x10;
+    pkt.spareFlag2      = flags2 & 0x20;
+    pkt.spareFlag3      = flags2 & 0x40;
+    pkt.spareFlag4      = flags2 & 0x80;
+
+    // --- Engine & Diagnostics ---
+    stream >> pkt.engineRPM;
+    stream >> pkt.commandCounter;
+    stream >> pkt.lastAppliedCommand;
+
+    // --- Error Counters ---
+    stream >> pkt.packetErrorCounter;
+    stream >> pkt.headerErrorCounter;
+    stream >> pkt.crcErrorCounter;
+    stream >> pkt.serialTimeoutErrorCounter;
+    stream >> pkt.frameLengthMismatchErrorCounter;
+
+    return pkt;
 }
 
 void SerialPort::connectToSerialPort(const QString &portName, int baudRate)
