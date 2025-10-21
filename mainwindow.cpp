@@ -204,49 +204,55 @@ void MainWindow::updateAll(){
     ui->pktCounter->display(static_cast<int>(dataToShow.PacketCounter));
     ui->frameTime->display(formatFloat(static_cast<float>(dataToShow.FrameTime) / 1000));
 
-    ui->avionicBatteryVolate->display(formatFloat(dataToShow.avionicBatteryVoltage));
-    ui->avionicBatteryCurrent->display(formatFloat(dataToShow.avionicBatteryCurrent));
-    ui->GeneratorCurrent->display(formatFloat(dataToShow.generatorCurrent));
-    ui->GeneratorVoltage->display(formatFloat(dataToShow.generatorVoltage));
-    ui->groundSupplyVoltage->display(formatFloat(dataToShow.groundSupplyVoltage));
-    ui->groundSupplyCurrent->display(formatFloat(dataToShow.groundSupplyCurrent));
-    ui->vBusVoltage->display(formatFloat(dataToShow.vBusVoltage));
-    ui->vBusCurrent->display(formatFloat(dataToShow.vBusCurrent));
-    ui->b3_8v2Voltage->display(formatFloat(dataToShow.b3v2_8VoltVoltage));
-    ui->b3_8v2Current->display(formatFloat(dataToShow.b3v2_8VoltCurrent));
-    ui->b1_24vVoltage->display(formatFloat(dataToShow.b1_24VoltVoltage));
-    ui->b1_24vCurrent->display(formatFloat(dataToShow.b1_24VoltCurrent));
-    ui->b1A_24vVoltage->display(formatFloat(dataToShow.b1A_24VoltVoltage));
-    ui->b1A_24vCurrent->display(formatFloat(dataToShow.b1A_24VoltCurrent));
-    ui->b2_8v2Voltage->display(formatFloat(dataToShow.b2v2_8VoltVoltage));
-    ui->b2_8v2Current->display(formatFloat(dataToShow.b2v2_8VoltCurrent));
-    ui->b3_8v2Voltage->display(formatFloat(dataToShow.b3v2_8VoltVoltage));
-    ui->b3_8v2Current->display(formatFloat(dataToShow.b3v2_8VoltCurrent));
-    ui->b3a_8v2Voltage->display(formatFloat(dataToShow.b3av2_8VoltVoltage));
-    ui->b3a_8v2Current->display(formatFloat(dataToShow.b3av2_8VoltCurrent));
-    ui->b4_12vVoltage->display(formatFloat(dataToShow.b4_12VoltVoltage));
-    ui->b4_12vCurrent->display(formatFloat(dataToShow.b4_12VoltCurrent));
-    ui->b4a_12vVoltage->display(formatFloat(dataToShow.b4a_12VoltVoltage));
-    ui->b4a_12vCurrent->display(formatFloat(dataToShow.b4a_12VoltCurrent));
-    ui->b5_24vVoltage->display(formatFloat(dataToShow.b5_24VoltVoltage));
-    ui->b5_24vCurrent->display(formatFloat(dataToShow.b5_24VoltCurrent));
-    ui->b5a_24vVoltage->display(formatFloat(dataToShow.b5a_24VoltVoltage));
-    ui->b5a_24vCurrent->display(formatFloat(dataToShow.b5a_24VoltCurrent));
-    ui->b5b_24vVoltage->display(formatFloat(dataToShow.b5b_24VoltVoltage));
-    ui->b5b_24vCurrent->display(formatFloat(dataToShow.b5b_24VoltCurrent));
-    ui->b6_5vVoltage->display(formatFloat(dataToShow.b6_5VoltVoltage));
-    ui->b6_5vCurrent->display(formatFloat(dataToShow.b6_5VoltCurrent));
-    ui->ain_1Voltage->display(formatFloat(dataToShow.aIn1Voltage));
-    ui->ain_2Voltage->display(formatFloat(dataToShow.aIn2Voltage));
-    ui->ain_3Voltage->display(formatFloat(dataToShow.aIn3Voltage));
-    ui->temperature->display(formatFloat(dataToShow.tempSensorInternal));
-    ui->debugV1->display(formatFloat(dataToShow.debugVoltage1_BST));
-    ui->debugC1->display(formatFloat(dataToShow.debugCurrent1_BST));
-    ui->debugV2->display(formatFloat(dataToShow.debugVoltage2_AVIN));
-    ui->debugV3->display(formatFloat(dataToShow.debugVoltage3_SP1));
-    ui->debugV4->display(formatFloat(dataToShow.debugVoltage4_SP2));
-    ui->debugV5->display(formatFloat(dataToShow.debugVoltage5_SP3));
-    ui->debugV6->display(formatFloat(dataToShow.debugVoltage6_VIN_BP));
+    ui->avionicBatteryVolate->display(formatFloat(static_cast<float>(dataToShow.avionicBatteryVoltage) / 1000));
+    ui->avionicBatteryCurrent->display(formatFloat(static_cast<float>(dataToShow.avionicBatteryCurrent) / 1000));
+    ui->GeneratorVoltage->display(formatFloat(static_cast<float>(dataToShow.generatorVoltage) / 1000));
+    ui->GeneratorCurrent->display(formatFloat(static_cast<float>(dataToShow.generatorCurrent) / 1000));
+    ui->groundSupplyVoltage->display(formatFloat(static_cast<float>(dataToShow.groundSupplyVoltage) / 1000));
+    ui->groundSupplyCurrent->display(formatFloat(static_cast<float>(dataToShow.groundSupplyCurrent) / 1000));
+    ui->vBusVoltage->display(formatFloat(static_cast<float>(dataToShow.vBusVoltage) / 1000));
+    ui->vBusCurrent->display(formatFloat(static_cast<float>(dataToShow.vBusCurrent) / 1000));
+
+    ui->b1_24vVoltage->display(formatFloat(static_cast<float>(dataToShow.b1_24VoltVoltage) / 1000));
+    ui->b1_24vCurrent->display(formatFloat(static_cast<float>(dataToShow.b1_24VoltCurrent) / 1000));
+    ui->b1A_24vVoltage->display(formatFloat(static_cast<float>(dataToShow.b1A_24VoltVoltage) / 1000));
+    ui->b1A_24vCurrent->display(formatFloat(static_cast<float>(dataToShow.b1A_24VoltCurrent) / 1000));
+
+    ui->b2_8v2Voltage->display(formatFloat(static_cast<float>(dataToShow.b2v2_8VoltVoltage) / 1000));
+    ui->b2_8v2Current->display(formatFloat(static_cast<float>(dataToShow.b2v2_8VoltCurrent) / 1000));
+
+    ui->b3_8v2Voltage->display(formatFloat(static_cast<float>(dataToShow.b3v2_8VoltVoltage) / 1000));
+    ui->b3_8v2Current->display(formatFloat(static_cast<float>(dataToShow.b3v2_8VoltCurrent) / 1000));
+    ui->b3a_8v2Voltage->display(formatFloat(static_cast<float>(dataToShow.b3av2_8VoltVoltage) / 1000));
+    ui->b3a_8v2Current->display(formatFloat(static_cast<float>(dataToShow.b3av2_8VoltCurrent) / 1000));
+
+    ui->b4_12vVoltage->display(formatFloat(static_cast<float>(dataToShow.b4_12VoltVoltage) / 1000));
+    ui->b4_12vCurrent->display(formatFloat(static_cast<float>(dataToShow.b4_12VoltCurrent) / 1000));
+    ui->b4a_12vVoltage->display(formatFloat(static_cast<float>(dataToShow.b4a_12VoltVoltage) / 1000));
+    ui->b4a_12vCurrent->display(formatFloat(static_cast<float>(dataToShow.b4a_12VoltCurrent) / 1000));
+
+    ui->b5_24vVoltage->display(formatFloat(static_cast<float>(dataToShow.b5_24VoltVoltage) / 1000));
+    ui->b5_24vCurrent->display(formatFloat(static_cast<float>(dataToShow.b5_24VoltCurrent) / 1000));
+    ui->b5a_24vVoltage->display(formatFloat(static_cast<float>(dataToShow.b5a_24VoltVoltage) / 1000));
+    ui->b5a_24vCurrent->display(formatFloat(static_cast<float>(dataToShow.b5a_24VoltCurrent) / 1000));
+    ui->b5b_24vVoltage->display(formatFloat(static_cast<float>(dataToShow.b5b_24VoltVoltage) / 1000));
+    ui->b5b_24vCurrent->display(formatFloat(static_cast<float>(dataToShow.b5b_24VoltCurrent) / 1000));
+
+    ui->b6_5vVoltage->display(formatFloat(static_cast<float>(dataToShow.b6_5VoltVoltage) / 1000));
+    ui->b6_5vCurrent->display(formatFloat(static_cast<float>(dataToShow.b6_5VoltCurrent) / 1000));
+
+    ui->ain_1Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn1Voltage) / 1000));
+    ui->ain_2Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn2Voltage) / 1000));
+    ui->ain_3Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn3Voltage) / 1000));
+    ui->temperature->display(formatFloat(static_cast<float>(dataToShow.tempSensorInternal) / 1000));
+
+    ui->debugV1->display(formatFloat(static_cast<float>(dataToShow.debugVoltage1_BST) / 1000));
+    ui->debugC1->display(formatFloat(static_cast<float>(dataToShow.debugCurrent1_BST) / 1000));
+    ui->debugV2->display(formatFloat(static_cast<float>(dataToShow.debugVoltage2_AVIN) / 1000));
+    ui->debugV3->display(formatFloat(static_cast<float>(dataToShow.debugVoltage3_SP1) / 1000));
+    ui->debugV4->display(formatFloat(static_cast<float>(dataToShow.debugVoltage4_SP2) / 1000));
+    ui->debugV5->display(formatFloat(static_cast<float>(dataToShow.debugVoltage5_SP3) / 1000));
+    ui->debugV6->display(formatFloat(static_cast<float>(dataToShow.debugVoltage6_VIN_BP) / 1000));
 
 
 

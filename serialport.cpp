@@ -32,9 +32,13 @@ void SerialPort::onDataRx()
                 uint8_t crcLow = static_cast<uint8_t>(dataRead.at(i - 1));
                 uint8_t crcHigh  = static_cast<uint8_t>(dataRead.at(i));
                 uint16_t receivedCrc = (static_cast<uint16_t>(crcHigh) << 8) | crcLow;
-                // qDebug().nospace()
-                //     << "Received CRC: 0x"
-                //     << QString("%1").arg(receivedCrc, 4, 16, QLatin1Char('0')).toUpper();
+                  qDebug().nospace()
+                      << "Received CRC: 0x"
+                    << QString("%1").arg(receivedCrc, 4, 16, QLatin1Char('0')).toUpper();
+
+                qDebug().nospace()
+                    << "Calculated CRC: 0x"
+                    << QString("%1").arg(computedCrc, 4, 16, QLatin1Char('0')).toUpper();
 
 
                 if (computedCrc == receivedCrc) {
@@ -64,6 +68,7 @@ void SerialPort::onDataRx()
 
 Packet SerialPort::DeSerializePacket()
 {
+    qDebug() << "Deserializing Packet";
     Packet pkt{};
     QDataStream stream(buffer);
     stream.setByteOrder(QDataStream::LittleEndian); // Assuming little-endian protocol
@@ -253,7 +258,7 @@ uint16_t SerialPort::calculateBufferCRC16()
     }
 
     // Step 2: process the first 64 bytes of buffer
-    int length = qMin(buffer.size(), 64);
+    int length = qMin(buffer.size(), 121);
     for (int i = 0; i < length; i++) {
         crc ^= (static_cast<uint16_t>(static_cast<uint8_t>(buffer[i])) << 8);
 
