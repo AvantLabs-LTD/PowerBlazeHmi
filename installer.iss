@@ -2,15 +2,15 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "PowerBlaze"
-#define MyAppVersion "2.0.1"
-#define MyAppPublisher "AvantLabs"
-#define MyAppURL "https://avantlabstech.com/"
-#define MyAppExeName "power-blaze.exe"
+#define MyAppVersion "1.0"
+#define MyAppPublisher "Avantlabs"
+#define MyAppURL "https://avantlabstech.com"
+#define MyAppExeName "blaze.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{D9AE3853-907E-4205-A921-798509104041}
+AppId={{59616143-8134-4A1D-99F9-6B6FA72C106A}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -27,7 +27,7 @@ ArchitecturesAllowed=x64compatible
 ; meaning it should use the native 64-bit Program Files directory and
 ; the 64-bit view of the registry.
 ArchitecturesInstallIn64BitMode=x64compatible
-DefaultGroupName={#MyAppName}
+DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputBaseFilename=mysetup
@@ -42,12 +42,12 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\nextcloud\PowerBlaze\blaze\build\release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\nextcloud\PowerBlaze\blaze\build\release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\nextcloud\PowerNexus\blaze\build\Desktop_Qt_6_8_0_MinGW_64_bit-Release\release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\nextcloud\PowerNexus\blaze\build\Desktop_Qt_6_8_0_MinGW_64_bit-Release\release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
+Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
