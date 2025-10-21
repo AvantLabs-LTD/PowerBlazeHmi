@@ -244,7 +244,7 @@ void MainWindow::updateAll(){
     ui->ain_1Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn1Voltage) / 1000));
     ui->ain_2Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn2Voltage) / 1000));
     ui->ain_3Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn3Voltage) / 1000));
-    ui->temperature->display(formatFloat(static_cast<float>(dataToShow.tempSensorInternal) / 1000));
+    ui->temperature->display(formatFloat(static_cast<float>(dataToShow.tempSensorInternal) / 100));
 
     ui->debugV1->display(formatFloat(static_cast<float>(dataToShow.debugVoltage1_BST) / 1000));
     ui->debugC1->display(formatFloat(static_cast<float>(dataToShow.debugCurrent1_BST) / 1000));
