@@ -89,6 +89,9 @@ struct Packet
     uint16_t crcErrorCounter;                // 2
     uint16_t serialTimeoutErrorCounter;      // 2
     uint16_t frameLengthMismatchErrorCounter;// 2
+
+    uint16_t boostTempSensor1;
+    uint16_t boostTempSensor2;
 };
 
 enum CommandID{

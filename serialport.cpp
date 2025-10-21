@@ -161,6 +161,8 @@ Packet SerialPort::DeSerializePacket()
     stream >> pkt.crcErrorCounter;
     stream >> pkt.serialTimeoutErrorCounter;
     stream >> pkt.frameLengthMismatchErrorCounter;
+    stream >> pkt.boostTempSensor1;
+    stream >> pkt.boostTempSensor2;
 
     return pkt;
 }

@@ -245,6 +245,8 @@ void MainWindow::updateAll(){
     ui->ain_2Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn2Voltage) / 1000));
     ui->ain_3Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn3Voltage) / 1000));
     ui->temperature->display(formatFloat(static_cast<float>(dataToShow.tempSensorInternal) / 100));
+    ui->boostTemp1->display(formatFloat(static_cast<float>(dataToShow.boostTempSensor1) / 100));
+    ui->boostTemp2->display(formatFloat(static_cast<float>(dataToShow.boostTempSensor2) / 100));
 
     ui->debugV1->display(formatFloat(static_cast<float>(dataToShow.debugVoltage1_BST) / 1000));
     ui->debugC1->display(formatFloat(static_cast<float>(dataToShow.debugCurrent1_BST) / 1000));
@@ -544,4 +546,160 @@ QString MainWindow::getCmdLogCSVHeaders() {
 
 
 
+
+
+void MainWindow::on_b1aCheckbox_clicked()
+{
+    if(ui->b1aCheckbox->checkState() == Qt::Checked){
+        Command cmd(b1A_24V, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(b1A_24V, Off);
+        sendCommand(cmd);
+
+    }
+}
+
+
+void MainWindow::on_b3aCheckBox_clicked()
+{
+    if(ui->b3aCheckBox->checkState() == Qt::Checked){
+        Command cmd(b3A_8V2, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(b3A_8V2, Off);
+        sendCommand(cmd);
+
+    }
+}
+
+
+void MainWindow::on_b4aCheckbox_clicked()
+{
+    if(ui->b4aCheckbox->checkState() == Qt::Checked){
+        Command cmd(b4A_12V, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(b4A_12V, Off);
+        sendCommand(cmd);
+
+    }
+}
+
+
+void MainWindow::on_b5aCheckBox_clicked()
+{
+    if(ui->b5aCheckBox->checkState() == Qt::Checked){
+        Command cmd(b5A_24V, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(b5A_24V, Off);
+        sendCommand(cmd);
+
+    }
+}
+
+
+void MainWindow::on_b5bCheckBox_clicked()
+{
+    if(ui->b5bCheckBox->checkState() == Qt::Checked){
+        Command cmd(b5A_24V, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(b5A_24V, Off);
+        sendCommand(cmd);
+
+    }
+}
+
+
+void MainWindow::on_dout1CHeckbox_clicked()
+{
+    if(ui->dout1CHeckbox->checkState() == Qt::Checked){
+        Command cmd(DOUT_1, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(DOUT_1, Off);
+        sendCommand(cmd);
+
+    }
+}
+
+
+void MainWindow::on_dout2Checkbox_clicked()
+{
+    if(ui->dout2Checkbox->checkState() == Qt::Checked){
+        Command cmd(DOUT_2, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(DOUT_2, Off);
+        sendCommand(cmd);
+
+    }
+}
+
+
+void MainWindow::on_pwm1Checkbox_clicked()
+{
+    if(ui->pwm1Checkbox->checkState() == Qt::Checked){
+        Command cmd(PWM_1, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(PWM_1, Off);
+        sendCommand(cmd);
+
+    }
+}
+
+
+void MainWindow::on_pwm2Checkbox_clicked()
+{
+    if(ui->pwm2Checkbox->checkState() == Qt::Checked){
+        Command cmd(PWM_2, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(PWM_2, Off);
+        sendCommand(cmd);
+
+    }
+}
+
+
+void MainWindow::on_pyraArmCheckbox_clicked()
+{
+    if(ui->pyraArmCheckbox->checkState() == Qt::Checked){
+        Command cmd(ARM, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(ARM, Off);
+        sendCommand(cmd);
+
+    }
+}
+
+
+void MainWindow::on_pyroIgnCheckbox_clicked()
+{
+    if(ui->pyroIgnCheckbox->checkState() == Qt::Checked){
+        Command cmd(IGN, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(IGN, Off);
+        sendCommand(cmd);
+
+    }
+}
+
+
+void MainWindow::on_batSwitchCheckbox_clicked()
+{
+    if(ui->batSwitchCheckbox->checkState() == Qt::Checked){
+        Command cmd(Battery_Switch, On);
+        sendCommand(cmd);
+    }else{
+        Command cmd(Battery_Switch, Off);
+        sendCommand(cmd);
+
+    }
+}
 

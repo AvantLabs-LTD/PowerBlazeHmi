@@ -43,6 +43,30 @@ private slots:
 
 
 
+    void on_b1aCheckbox_clicked();
+
+    void on_b3aCheckBox_clicked();
+
+    void on_b4aCheckbox_clicked();
+
+    void on_b5aCheckBox_clicked();
+
+    void on_b5bCheckBox_clicked();
+
+    void on_dout1CHeckbox_clicked();
+
+    void on_dout2Checkbox_clicked();
+
+    void on_pwm1Checkbox_clicked();
+
+    void on_pwm2Checkbox_clicked();
+
+    void on_pyraArmCheckbox_clicked();
+
+    void on_pyroIgnCheckbox_clicked();
+
+    void on_batSwitchCheckbox_clicked();
+
 private:
     Ui::MainWindow *ui;
     SerialPort m_serialPort;
