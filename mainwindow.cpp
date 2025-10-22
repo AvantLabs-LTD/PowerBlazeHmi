@@ -36,8 +36,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowIcon(icon);
 
     this->showMaximized();
-    this->setWindowTitle("PowerBlazev1.0.0");
-    ui->versionLabel->setText("v1.0.0");
+    this->setWindowTitle("PowerBlazev1.0.1");
+    ui->versionLabel->setText("v1.0.1");
 
 
     timeTimer = new QTimer(this);
