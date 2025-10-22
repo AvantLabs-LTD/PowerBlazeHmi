@@ -108,374 +108,12 @@
                     }</string>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="2">
-     <spacer name="horizontalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Orientation::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Policy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="0" column="1">
-     <widget class="QGroupBox" name="navBarGroup">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>90</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-                                background-color: #fff;
-                                border: 1px solid #ccc;
-                                border-radius: 20px;
-                                margin-top: 0px;
-                                margin-bottom: 10px;
-                                padding: 10px 10px 10px 10px;
-                                }
-
-                                QGroupBox::title {
-                                subcontrol-origin: content;
-                                subcontrol-position: top left;
-                                padding: 2px 8px;
-                                color: #444;
-                                font-size: 44px;
-                                background-color: transparent;
-                                }
-                            </string>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QLabel" name="logoLbl">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>160</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>160</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="minimumSize">
-          <size>
-           <width>2</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>2</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: #ccc;
-                                            border radius: 5px;</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_4">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Segoe UI</family>
-           <pointsize>-1</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font-size: 28px;
-                                            padding-bottom: 2px;
-                                            padding-top: -8px;
-                                            margin-top: 0px</string>
-         </property>
-         <property name="text">
-          <string>PowerBlaze</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_3">
-         <property name="minimumSize">
-          <size>
-           <width>2</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>2</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: #ccc;
-                                            border radius: 5px;</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="versionLabel">
-         <property name="text">
-          <string>v2.0.4</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_5">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QLabel" name="timeLabel">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_11">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Policy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QComboBox" name="portComboBox">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>1</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>120</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QComboBox {
-                                                    background-color: #fff;
-                                                    border: 1px solid #ccc;
-                                                    border-radius: 8px;
-                                                    padding: 4px 8px;
-                                                    font-size: 14px;
-                                                    color: #333;
-                                                    }
-
-                                                    QComboBox:hover {
-                                                    border: 1px solid #999;
-                                                    }
-
-                                                    QComboBox::drop-down {
-                                                    subcontrol-origin: padding;
-                                                    subcontrol-position: top right;
-                                                    width: 20px;
-                                                    border-left: 1px solid #ccc;
-                                                    }
-
-                                                    QComboBox::down-arrow {
-                                                    image: url(:/icons/down-arrow.png); /* Optional:
-                                                    use your own icon */
-                                                    width: 12px;
-                                                    height: 12px;
-                                                    }</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="baudRateComboBox">
-           <property name="styleSheet">
-            <string notr="true">QComboBox {
-                                                    background-color: #fff;
-                                                    border: 1px solid #ccc;
-                                                    border-radius: 8px;
-                                                    padding: 4px 8px;
-                                                    font-size: 14px;
-                                                    color: #333;
-                                                    }
-
-                                                    QComboBox:hover {
-                                                    border: 1px solid #999;
-                                                    }
-
-                                                    QComboBox::drop-down {
-                                                    subcontrol-origin: padding;
-                                                    subcontrol-position: top right;
-                                                    width: 20px;
-                                                    border-left: 1px solid #ccc;
-                                                    }
-
-                                                    QComboBox::down-arrow {
-                                                    image: url(:/icons/down-arrow.png); /* Optional:
-                                                    use your own icon */
-                                                    width: 12px;
-                                                    height: 12px;
-                                                    }</string>
-           </property>
-           <property name="currentIndex">
-            <number>4</number>
-           </property>
-           <item>
-            <property name="text">
-             <string>9600</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>19200</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>38400</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>57600</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>115200</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QPushButton" name="refreshBtn">
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-                                                    background-color: #f5f5f5;
-                                                    border: 1px solid #ccc;
-                                                    border-radius: 10px;
-                                                    padding: 6px 12px;
-                                                    font-size: 14px;
-                                                    color: #333;
-                                                    }
-
-                                                    QPushButton:hover {
-                                                    background-color: #e6e6e6;
-                                                    border: 1px solid #bbb;
-                                                    }
-
-                                                    QPushButton:pressed {
-                                                    background-color: #dcdcdc;
-                                                    border: 1px solid #999;
-                                                    }</string>
-           </property>
-           <property name="text">
-            <string>Refresh</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="connectBtn">
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-                                                    background-color: #f5f5f5;
-                                                    border: 1px solid #ccc;
-                                                    border-radius: 10px;
-                                                    padding: 6px 12px;
-                                                    font-size: 14px;
-                                                    color: #333;
-                                                    }
-
-                                                    QPushButton:hover {
-                                                    background-color: #e6e6e6;
-                                                    border: 1px solid #bbb;
-                                                    }
-
-                                                    QPushButton:pressed {
-                                                    background-color: #dcdcdc;
-                                                    border: 1px solid #999;
-                                                    }</string>
-           </property>
-           <property name="text">
-            <string>Connect</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-    </item>
     <item row="1" column="1">
      <layout class="QGridLayout" name="primeLayout">
       <property name="sizeConstraint">
        <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
       </property>
-      <item row="3" column="0">
+      <item row="0" column="3" rowspan="2">
        <widget class="QGroupBox" name="analogInputBox">
         <property name="minimumSize">
          <size>
@@ -486,7 +124,7 @@
         <property name="maximumSize">
          <size>
           <width>1672155</width>
-          <height>120</height>
+          <height>1672155</height>
          </size>
         </property>
         <property name="font">
@@ -519,8 +157,52 @@
          <string>ANALOG INPUTS</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_9">
-         <item row="2" column="6">
-          <widget class="QLCDNumber" name="ain_3Voltage">
+         <item row="7" column="0">
+          <widget class="QLabel" name="serialDebug_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>120</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>120</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_17">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Channel 2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLCDNumber" name="ain_2Voltage">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -551,8 +233,8 @@
            </property>
           </spacer>
          </item>
-         <item row="2" column="3">
-          <widget class="QLabel" name="label_17">
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_20">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -562,11 +244,27 @@
            <property name="maximumSize">
             <size>
              <width>140</width>
-             <height>16777215</height>
+             <height>140</height>
             </size>
            </property>
            <property name="text">
-            <string>Channel 2</string>
+            <string>Channel 3</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLCDNumber" name="ain_3Voltage">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>60</height>
+            </size>
            </property>
           </widget>
          </item>
@@ -589,47 +287,6 @@
            </property>
           </widget>
          </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="serialDebug_2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>120</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>120</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="4">
-          <widget class="QLCDNumber" name="ain_2Voltage">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>60</height>
-            </size>
-           </property>
-          </widget>
-         </item>
          <item row="2" column="1">
           <widget class="QLCDNumber" name="ain_1Voltage">
            <property name="minimumSize">
@@ -646,29 +303,634 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="5">
-          <widget class="QLabel" name="label_20">
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0" rowspan="2">
+       <widget class="QGroupBox" name="gridGroupBox">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>1677777</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+                                        background-color: #fff;
+                                        border: 1px solid #ccc;
+                                        border-radius: 20px;
+                                        margin-top: 0px;
+                                        padding: 5px;
+                                        }
+
+                                        QGroupBox::title {
+                                        subcontrol-origin: content;
+                                        subcontrol-position: top left;
+                                        padding: 1px 2px;
+                                        color: #444;
+                                        font-size: 28px;
+                                        background-color: transparent;
+                                        }
+                                    </string>
+        </property>
+        <property name="title">
+         <string>INPUT POWER BUSES</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLabel" name="label_tpi_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>0</width>
-             <height>60</height>
+             <width>50</width>
+             <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>140</width>
-             <height>140</height>
+             <width>16777215</width>
+             <height>30</height>
             </size>
            </property>
            <property name="text">
-            <string>Channel 3</string>
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="5">
+          <widget class="QLCDNumber" name="vBusPower">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLCDNumber" name="avionicBatteryCurrent">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLCDNumber" name="groundSupplyVoltage">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>-1</pointsize>
+             <kerning>true</kerning>
+            </font>
+           </property>
+           <property name="smallDecimalPoint">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QLCDNumber" name="vBusCurrent">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="5">
+          <widget class="QLCDNumber" name="avionicBatteryPower">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLCDNumber" name="vBusVoltage">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>-1</pointsize>
+            </font>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLabel" name="label_13">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLCDNumber" name="groundSupplyCurrent">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>-1</pointsize>
+            </font>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="6">
+          <widget class="QLabel" name="label_47">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="label_6">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="4">
+          <widget class="QLabel" name="label_22">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_8">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLCDNumber" name="GeneratorVoltage">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>-1</pointsize>
+            </font>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="QLabel" name="label_6_amp">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="5">
+          <widget class="QLCDNumber" name="GeneratorPower">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="6">
+          <widget class="QLabel" name="label_50">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="4">
+          <widget class="QLabel" name="label_6_amp5_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLCDNumber" name="GeneratorCurrent">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>-1</pointsize>
+            </font>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="6">
+          <widget class="QLabel" name="label_48">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_18">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Ground Supply</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_tpv_2">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>V_IN</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="6">
+          <widget class="QLabel" name="label_49">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLabel" name="label_19">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Generator</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLCDNumber" name="avionicBatteryVolate">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="5">
+          <widget class="QLCDNumber" name="groundSupplyPower">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="7">
+          <widget class="QLabel" name="label_75">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>56</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="minimumSize">
+            <size>
+             <width>185</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Avionic Battery</string>
            </property>
           </widget>
          </item>
         </layout>
        </widget>
       </item>
-      <item row="0" column="2" rowspan="4">
+      <item row="0" column="2" rowspan="5">
        <widget class="QGroupBox" name="CommBox">
         <property name="minimumSize">
          <size>
@@ -1537,7 +1799,7 @@
         </layout>
        </widget>
       </item>
-      <item row="0" column="0">
+      <item row="2" column="0" rowspan="3">
        <widget class="QGroupBox" name="groupBox_bus_monitor">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1586,101 +1848,45 @@
         <property name="title">
          <string>OUTPUT POWER BUSES</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
+        </property>
         <layout class="QGridLayout" name="BusGridLayout">
-         <item row="14" column="3">
-          <widget class="QLabel" name="label_57">
+         <item row="8" column="6">
+          <widget class="QLabel" name="label_6_amp5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="3">
+          <widget class="QLabel" name="label_12">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="text">
             <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="6">
-          <widget class="QLabel" name="label_64">
-           <property name="text">
-            <string>A</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="5">
-          <widget class="QLCDNumber" name="avionicBatteryCurrent">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="5">
-          <widget class="QLCDNumber" name="vBusCurrent">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="12" column="2">
-          <widget class="QLCDNumber" name="b4a_12vVoltage"/>
-         </item>
-         <item row="13" column="6">
-          <widget class="QLabel" name="label_62">
-           <property name="text">
-            <string>A</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_tpv_2">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>VBUS</string>
-           </property>
-          </widget>
-         </item>
-         <item row="12" column="6">
-          <widget class="QLabel" name="label_61">
-           <property name="text">
-            <string>A</string>
            </property>
           </widget>
          </item>
@@ -1699,12 +1905,12 @@
             </size>
            </property>
            <property name="text">
-            <string>24V_B1A</string>
+            <string>B2-24</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="2">
-          <widget class="QLCDNumber" name="groundSupplyVoltage">
+         <item row="10" column="5">
+          <widget class="QLCDNumber" name="b3a_8v2Current">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -1713,7 +1919,7 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>300</width>
+             <width>160</width>
              <height>0</height>
             </size>
            </property>
@@ -1722,108 +1928,6 @@
              <width>180</width>
              <height>16777215</height>
             </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Segoe UI</family>
-             <pointsize>-1</pointsize>
-             <kerning>true</kerning>
-            </font>
-           </property>
-           <property name="smallDecimalPoint">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="2">
-          <widget class="QLCDNumber" name="b1_24vVoltage">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="0">
-          <widget class="QLabel" name="label_29">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>24V_B5</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="6">
-          <widget class="QLabel" name="label_13">
-           <property name="text">
-            <string>A</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="2">
-          <widget class="QLCDNumber" name="b5a_24vVoltage"/>
-         </item>
-         <item row="10" column="3">
-          <widget class="QLabel" name="label_6_amp2_3">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="5">
-          <widget class="QLCDNumber" name="b5b_24vCurrent"/>
-         </item>
-         <item row="4" column="6">
-          <widget class="QLabel" name="label_6_amp5_2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>A</string>
            </property>
           </widget>
          </item>
@@ -1846,84 +1950,22 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_18">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>16777215</height>
-            </size>
-           </property>
+         <item row="14" column="8">
+          <widget class="QLabel" name="label_71">
            <property name="text">
-            <string>Ground Supply</string>
+            <string>W</string>
            </property>
           </widget>
          </item>
-         <item row="16" column="5">
-          <widget class="QLCDNumber" name="b6_5vCurrent"/>
-         </item>
-         <item row="6" column="3">
-          <widget class="QLabel" name="label_12">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="17" column="0">
-          <spacer name="verticalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Orientation::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="8" column="6">
-          <widget class="QLabel" name="label_6_amp5">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>0</height>
-            </size>
-           </property>
+         <item row="16" column="6">
+          <widget class="QLabel" name="label_64">
            <property name="text">
             <string>A</string>
            </property>
           </widget>
          </item>
-         <item row="12" column="5">
-          <widget class="QLCDNumber" name="b4a_12vCurrent"/>
-         </item>
-         <item row="8" column="2">
-          <widget class="QLCDNumber" name="b2_8v2Voltage">
+         <item row="9" column="5">
+          <widget class="QLCDNumber" name="b3_8v2Current">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -1932,7 +1974,7 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>300</width>
+             <width>160</width>
              <height>0</height>
             </size>
            </property>
@@ -1941,12 +1983,6 @@
              <width>180</width>
              <height>16777215</height>
             </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Segoe UI</family>
-             <pointsize>-1</pointsize>
-            </font>
            </property>
           </widget>
          </item>
@@ -1960,294 +1996,7 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="11" column="3">
-          <widget class="QLabel" name="label_54">
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="5">
-          <widget class="QLCDNumber" name="b5_24vCurrent"/>
-         </item>
-         <item row="9" column="6">
-          <widget class="QLabel" name="label_6_amp2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>A</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="6">
-          <widget class="QLabel" name="label_6_amp4">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>A</string>
-           </property>
-          </widget>
-         </item>
-         <item row="16" column="3">
-          <widget class="QLabel" name="label_59">
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="3">
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="0">
-          <widget class="QLabel" name="label_31">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>24V_B5B</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="2">
-          <widget class="QLCDNumber" name="vBusVoltage">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Segoe UI</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="3">
-          <widget class="QLabel" name="label_6">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="16" column="6">
-          <widget class="QLabel" name="label_65">
-           <property name="text">
-            <string>A</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="3">
-          <widget class="QLabel" name="label_tpi_3">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="0">
-          <widget class="QLabel" name="label_9">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>8V2_B3</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="2">
-          <widget class="QLCDNumber" name="b1A_24vVoltage">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="0">
-          <widget class="QLabel" name="label_tpv">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>8V2_B2</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="2">
-          <widget class="QLCDNumber" name="b3a_8v2Voltage">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="3">
-          <widget class="QLabel" name="label_19">
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="5">
-          <widget class="QLCDNumber" name="b2_8v2Current">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="5">
-          <widget class="QLCDNumber" name="b1_24vCurrent">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
+             <width>160</width>
              <height>0</height>
             </size>
            </property>
@@ -2274,12 +2023,12 @@
             </size>
            </property>
            <property name="text">
-            <string>12V_B4A</string>
+            <string>B7-12</string>
            </property>
           </widget>
          </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_11">
+         <item row="15" column="0">
+          <widget class="QLabel" name="label_30">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -2288,135 +2037,45 @@
            </property>
            <property name="maximumSize">
             <size>
-             <width>400</width>
+             <width>16777215</width>
              <height>48</height>
             </size>
            </property>
            <property name="text">
-            <string>24V_B1</string>
+            <string>B10-24</string>
            </property>
           </widget>
          </item>
-         <item row="10" column="5">
-          <widget class="QLCDNumber" name="b3a_8v2Current">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
+         <item row="12" column="8">
+          <widget class="QLabel" name="label_70">
+           <property name="text">
+            <string>W</string>
            </property>
           </widget>
          </item>
-         <item row="13" column="3">
-          <widget class="QLabel" name="label_56">
+         <item row="12" column="7">
+          <widget class="QLCDNumber" name="b4a_12vPower"/>
+         </item>
+         <item row="15" column="8">
+          <widget class="QLabel" name="label_72">
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="3">
+          <widget class="QLabel" name="label_54">
            <property name="text">
             <string>V</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="5">
-          <widget class="QLCDNumber" name="GeneratorCurrent">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Segoe UI</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="6">
-          <widget class="QLabel" name="label_63">
-           <property name="text">
-            <string>A</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_7">
+         <item row="18" column="7">
+          <widget class="QLCDNumber" name="totalOutputPower">
            <property name="minimumSize">
             <size>
              <width>0</width>
              <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Avionic Battery</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="3">
-          <widget class="QLabel" name="label_16">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QLCDNumber" name="avionicBatteryVolate">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
             </size>
            </property>
           </widget>
@@ -2436,18 +2095,59 @@
             </size>
            </property>
            <property name="text">
-            <string>12V_B4</string>
+            <string>B6-12</string>
            </property>
           </widget>
          </item>
-         <item row="13" column="2">
-          <widget class="QLCDNumber" name="b5_24vVoltage"/>
-         </item>
-         <item row="10" column="7">
-          <widget class="QCheckBox" name="b3aCheckBox">
-           <property name="enabled">
-            <bool>true</bool>
+         <item row="14" column="6">
+          <widget class="QLabel" name="label_62">
+           <property name="text">
+            <string>A</string>
            </property>
+          </widget>
+         </item>
+         <item row="11" column="2">
+          <widget class="QLCDNumber" name="b4_12vVoltage">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="18" column="0">
+          <widget class="QLabel" name="label_124">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Total Output Power</string>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="3">
+          <widget class="QLabel" name="label_59">
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="14" column="2">
+          <widget class="QLCDNumber" name="b5_24vVoltage">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="9">
+          <widget class="QCheckBox" name="b1aCheckbox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -2456,13 +2156,13 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>80</width>
+             <width>60</width>
              <height>26</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>56</width>
+             <width>40</width>
              <height>30</height>
             </size>
            </property>
@@ -2474,10 +2174,46 @@
            </property>
           </widget>
          </item>
+         <item row="14" column="7">
+          <widget class="QLCDNumber" name="b5_24vPower"/>
+         </item>
+         <item row="13" column="6">
+          <widget class="QLabel" name="label_65">
+           <property name="text">
+            <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="7">
+          <widget class="QLCDNumber" name="b1A_24vPower"/>
+         </item>
          <item row="11" column="6">
           <widget class="QLabel" name="label_60">
            <property name="text">
             <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="19" column="0">
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Orientation::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="15" column="2">
+          <widget class="QLCDNumber" name="b5a_24vVoltage">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
            </property>
           </widget>
          </item>
@@ -2491,7 +2227,7 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>300</width>
+             <width>160</width>
              <height>0</height>
             </size>
            </property>
@@ -2503,89 +2239,22 @@
            </property>
           </widget>
          </item>
-         <item row="9" column="5">
-          <widget class="QLCDNumber" name="b3_8v2Current">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>300</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
-           </property>
-          </widget>
+         <item row="13" column="7">
+          <widget class="QLCDNumber" name="b6_5vPower"/>
          </item>
-         <item row="11" column="2">
-          <widget class="QLCDNumber" name="b4_12vVoltage"/>
-         </item>
-         <item row="15" column="3">
-          <widget class="QLabel" name="label_58">
+         <item row="14" column="3">
+          <widget class="QLabel" name="label_56">
            <property name="text">
             <string>V</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="6">
-          <widget class="QLabel" name="label_22">
+         <item row="15" column="6">
+          <widget class="QLabel" name="label_63">
            <property name="text">
             <string>A</string>
            </property>
           </widget>
-         </item>
-         <item row="16" column="0">
-          <widget class="QLabel" name="label_32">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>5V_B6</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Orientation::Horizontal</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Policy::Fixed</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>10</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="12" column="3">
-          <widget class="QLabel" name="label_55">
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="5">
-          <widget class="QLCDNumber" name="b5a_24vCurrent"/>
          </item>
          <item row="10" column="0">
           <widget class="QLabel" name="label_25">
@@ -2602,12 +2271,101 @@
             </size>
            </property>
            <property name="text">
-            <string>8V2_B3A</string>
+            <string>B5-8.2</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="2">
-          <widget class="QLCDNumber" name="GeneratorVoltage">
+         <item row="11" column="5">
+          <widget class="QLCDNumber" name="b4_12vCurrent">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="14" column="5">
+          <widget class="QLCDNumber" name="b5_24vCurrent">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="8">
+          <widget class="QLabel" name="label_51">
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="7">
+          <widget class="QLCDNumber" name="b3a_8v2Power"/>
+         </item>
+         <item row="13" column="8">
+          <widget class="QLabel" name="label_74">
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="3">
+          <widget class="QLabel" name="label_55">
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="8">
+          <widget class="QLabel" name="label_68">
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1-24</string>
+           </property>
+          </widget>
+         </item>
+         <item row="15" column="9">
+          <widget class="QCheckBox" name="b5aCheckBox">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="2">
+          <widget class="QLCDNumber" name="b1A_24vVoltage">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -2616,7 +2374,7 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>300</width>
+             <width>160</width>
              <height>0</height>
             </size>
            </property>
@@ -2626,16 +2384,23 @@
              <height>16777215</height>
             </size>
            </property>
-           <property name="font">
-            <font>
-             <family>Segoe UI</family>
-             <pointsize>-1</pointsize>
-            </font>
+          </widget>
+         </item>
+         <item row="16" column="5">
+          <widget class="QLCDNumber" name="b5b_24vCurrent">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
            </property>
           </widget>
          </item>
+         <item row="16" column="7">
+          <widget class="QLCDNumber" name="b5b_24vPower"/>
+         </item>
          <item row="14" column="0">
-          <widget class="QLabel" name="label_30">
+          <widget class="QLabel" name="label_29">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -2649,7 +2414,143 @@
             </size>
            </property>
            <property name="text">
-            <string>24V_B5A</string>
+            <string>B9-24</string>
+           </property>
+          </widget>
+         </item>
+         <item row="16" column="3">
+          <widget class="QLabel" name="label_58">
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="5">
+          <widget class="QLCDNumber" name="b4a_12vCurrent">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="2">
+          <widget class="QLCDNumber" name="b4a_12vVoltage">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="5">
+          <widget class="QLCDNumber" name="b2_8v2Current">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="8">
+          <widget class="QLabel" name="label_67">
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="2">
+          <widget class="QLCDNumber" name="b1_24vVoltage">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="7">
+          <widget class="QLCDNumber" name="b4_12vPower"/>
+         </item>
+         <item row="16" column="8">
+          <widget class="QLabel" name="label_73">
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="7">
+          <widget class="QLCDNumber" name="b1_24vPower"/>
+         </item>
+         <item row="9" column="7">
+          <widget class="QLCDNumber" name="b3_8v2Power"/>
+         </item>
+         <item row="7" column="6">
+          <widget class="QLabel" name="label_6_amp4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="16" column="2">
+          <widget class="QLCDNumber" name="b5b_24vVoltage">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="15" column="7">
+          <widget class="QLCDNumber" name="b5a_24vPower"/>
+         </item>
+         <item row="15" column="5">
+          <widget class="QLCDNumber" name="b5a_24vCurrent">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
            </property>
           </widget>
          </item>
@@ -2672,11 +2573,106 @@
            </property>
           </widget>
          </item>
-         <item row="11" column="5">
-          <widget class="QLCDNumber" name="b4_12vCurrent"/>
+         <item row="13" column="5">
+          <widget class="QLCDNumber" name="b6_5vCurrent">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
          </item>
-         <item row="6" column="6">
-          <widget class="QLabel" name="label_6_amp3">
+         <item row="13" column="0">
+          <widget class="QLabel" name="label_32">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B8-5</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="2">
+          <widget class="QLCDNumber" name="b2_8v2Voltage">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>-1</pointsize>
+            </font>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_tpv">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B3-8.2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="2">
+          <widget class="QLCDNumber" name="b3a_8v2Voltage">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="3">
+          <widget class="QLabel" name="label_6_amp2_3">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -2690,12 +2686,114 @@
             </size>
            </property>
            <property name="text">
-            <string>A</string>
+            <string>V</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="5">
-          <widget class="QLCDNumber" name="groundSupplyCurrent">
+         <item row="10" column="9">
+          <widget class="QCheckBox" name="b3aCheckBox">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="3">
+          <widget class="QLabel" name="label_16">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="8">
+          <widget class="QLabel" name="label_52">
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B4-8.2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="8">
+          <widget class="QLabel" name="label_69">
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="9">
+          <widget class="QCheckBox" name="b4aCheckbox">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="5">
+          <widget class="QLCDNumber" name="b1_24vCurrent">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -2704,29 +2802,36 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>300</width>
+             <width>160</width>
              <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>150</width>
+             <width>180</width>
              <height>16777215</height>
             </size>
            </property>
-           <property name="font">
-            <font>
-             <family>Segoe UI</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
           </widget>
          </item>
-         <item row="15" column="2">
-          <widget class="QLCDNumber" name="b5b_24vVoltage"/>
-         </item>
-         <item row="16" column="2">
-          <widget class="QLCDNumber" name="b6_5vVoltage"/>
+         <item row="16" column="0">
+          <widget class="QLabel" name="label_31">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B11-24</string>
+           </property>
+          </widget>
          </item>
          <item row="10" column="6">
           <widget class="QLabel" name="label_53">
@@ -2747,33 +2852,43 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
+         <item row="16" column="9">
+          <widget class="QCheckBox" name="b5bCheckBox">
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>48</height>
+             <height>26</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>400</width>
-             <height>48</height>
+             <width>60</width>
+             <height>30</height>
             </size>
            </property>
            <property name="text">
-            <string>Generator</string>
+            <string/>
            </property>
           </widget>
          </item>
-         <item row="2" column="6">
-          <widget class="QLabel" name="label_6_amp">
+         <item row="0" column="2">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>10</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="9" column="6">
+          <widget class="QLabel" name="label_6_amp2">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -2791,101 +2906,105 @@
            </property>
           </widget>
          </item>
-         <item row="7" column="7">
-          <widget class="QCheckBox" name="b1aCheckbox">
+         <item row="13" column="2">
+          <widget class="QLCDNumber" name="b6_5vVoltage">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="8">
+          <widget class="QLabel" name="label_66">
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="7">
+          <widget class="QLCDNumber" name="b2_8v2Power"/>
+         </item>
+         <item row="18" column="8">
+          <widget class="QLabel" name="label_126">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="6">
+          <widget class="QLabel" name="label_61">
+           <property name="text">
+            <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="6">
+          <widget class="QLabel" name="label_6_amp3">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>80</width>
-             <height>26</height>
+             <width>50</width>
+             <height>0</height>
             </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>56</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"/>
            </property>
            <property name="text">
-            <string/>
+            <string>A</string>
            </property>
           </widget>
          </item>
-         <item row="12" column="7">
-          <widget class="QCheckBox" name="b4aCheckbox">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>26</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>30</height>
-            </size>
-           </property>
+         <item row="15" column="3">
+          <widget class="QLabel" name="label_57">
            <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="7">
-          <widget class="QCheckBox" name="b5aCheckBox">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>26</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="7">
-          <widget class="QCheckBox" name="b5bCheckBox">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>26</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
+            <string>V</string>
            </property>
           </widget>
          </item>
         </layout>
        </widget>
       </item>
-      <item row="0" column="3">
+      <item row="4" column="1">
+       <spacer name="horizontalSpacer_16">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="3" rowspan="3">
        <widget class="QGroupBox" name="indicatorsgroupBox">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>600</height>
+          <height>1672155</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
         </property>
         <property name="styleSheet">
          <string notr="true">QGroupBox {
@@ -2907,9 +3026,157 @@
                                     </string>
         </property>
         <property name="title">
-         <string>Status Indicators</string>
+         <string>STATUS INDICATORS</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
+         <item row="2" column="1">
+          <widget class="QCheckBox" name="dout2Checkbox">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_43">
+           <property name="text">
+            <string>Pyro IGN</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QCheckBox" name="pyroIgnCheckbox">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0" colspan="2">
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);
+border: 1px solid black;
+border-radius: 12px;</string>
+           </property>
+           <property name="placeholderText">
+            <string>PWM COUNT</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QCheckBox" name="pwm1Checkbox">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_40">
+           <property name="text">
+            <string>PWM1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QCheckBox" name="pyraArmCheckbox">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_44">
+           <property name="text">
+            <string>BAT Switch</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_24">
+           <property name="text">
+            <string>DOUT2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QCheckBox" name="pwm2Checkbox">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <spacer name="verticalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Orientation::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
          <item row="4" column="0">
           <widget class="QLabel" name="label_41">
            <property name="text">
@@ -2924,70 +3191,6 @@
            </property>
           </widget>
          </item>
-         <item row="8" column="0">
-          <spacer name="verticalSpacer_6">
-           <property name="orientation">
-            <enum>Qt::Orientation::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="0">
-          <spacer name="verticalSpacer_5">
-           <property name="orientation">
-            <enum>Qt::Orientation::Vertical</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Policy::Fixed</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_24">
-           <property name="text">
-            <string>DOUT2</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_40">
-           <property name="text">
-            <string>PWM1</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_43">
-           <property name="text">
-            <string>Pyro IGN</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
-          <widget class="QLabel" name="label_44">
-           <property name="text">
-            <string>BAT Switch</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string>DOUT1</string>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="1">
           <widget class="QCheckBox" name="dout1CHeckbox">
            <property name="minimumSize">
@@ -2998,102 +3201,7 @@
            </property>
            <property name="maximumSize">
             <size>
-             <width>80</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QCheckBox" name="dout2Checkbox">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>26</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>80</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QCheckBox" name="pwm1Checkbox">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>26</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>80</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QCheckBox" name="pwm2Checkbox">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>26</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>80</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QCheckBox" name="pyraArmCheckbox">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>26</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>80</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QCheckBox" name="pyroIgnCheckbox">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>26</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>80</width>
+             <width>60</width>
              <height>30</height>
             </size>
            </property>
@@ -3112,7 +3220,7 @@
            </property>
            <property name="maximumSize">
             <size>
-             <width>80</width>
+             <width>60</width>
              <height>30</height>
             </size>
            </property>
@@ -3121,24 +3229,31 @@
            </property>
           </widget>
          </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>DOUT1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Orientation::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
         </layout>
        </widget>
-      </item>
-      <item row="3" column="1">
-       <spacer name="horizontalSpacer_16">
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Policy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </item>
@@ -3157,6 +3272,368 @@
        </size>
       </property>
      </spacer>
+    </item>
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Policy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="navBarGroup">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>90</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+                                background-color: #fff;
+                                border: 1px solid #ccc;
+                                border-radius: 20px;
+                                margin-top: 0px;
+                                margin-bottom: 10px;
+                                padding: 10px 10px 10px 10px;
+                                }
+
+                                QGroupBox::title {
+                                subcontrol-origin: content;
+                                subcontrol-position: top left;
+                                padding: 2px 8px;
+                                color: #444;
+                                font-size: 44px;
+                                background-color: transparent;
+                                }
+                            </string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="logoLbl">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>160</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>160</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="minimumSize">
+          <size>
+           <width>2</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>2</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #ccc;
+                                            border radius: 5px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>-1</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 28px;
+                                            padding-bottom: 2px;
+                                            padding-top: -8px;
+                                            margin-top: 0px</string>
+         </property>
+         <property name="text">
+          <string>PowerBlaze</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="minimumSize">
+          <size>
+           <width>2</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>2</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #ccc;
+                                            border radius: 5px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="versionLabel">
+         <property name="text">
+          <string>v2.0.5</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="timeLabel">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_11">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QComboBox" name="portComboBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>1</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>120</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+                                                    background-color: #fff;
+                                                    border: 1px solid #ccc;
+                                                    border-radius: 8px;
+                                                    padding: 4px 8px;
+                                                    font-size: 14px;
+                                                    color: #333;
+                                                    }
+
+                                                    QComboBox:hover {
+                                                    border: 1px solid #999;
+                                                    }
+
+                                                    QComboBox::drop-down {
+                                                    subcontrol-origin: padding;
+                                                    subcontrol-position: top right;
+                                                    width: 20px;
+                                                    border-left: 1px solid #ccc;
+                                                    }
+
+                                                    QComboBox::down-arrow {
+                                                    image: url(:/icons/down-arrow.png); /* Optional:
+                                                    use your own icon */
+                                                    width: 12px;
+                                                    height: 12px;
+                                                    }</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="baudRateComboBox">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+                                                    background-color: #fff;
+                                                    border: 1px solid #ccc;
+                                                    border-radius: 8px;
+                                                    padding: 4px 8px;
+                                                    font-size: 14px;
+                                                    color: #333;
+                                                    }
+
+                                                    QComboBox:hover {
+                                                    border: 1px solid #999;
+                                                    }
+
+                                                    QComboBox::drop-down {
+                                                    subcontrol-origin: padding;
+                                                    subcontrol-position: top right;
+                                                    width: 20px;
+                                                    border-left: 1px solid #ccc;
+                                                    }
+
+                                                    QComboBox::down-arrow {
+                                                    image: url(:/icons/down-arrow.png); /* Optional:
+                                                    use your own icon */
+                                                    width: 12px;
+                                                    height: 12px;
+                                                    }</string>
+           </property>
+           <property name="currentIndex">
+            <number>4</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>9600</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19200</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>38400</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>57600</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>115200</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="refreshBtn">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+                                                    background-color: #f5f5f5;
+                                                    border: 1px solid #ccc;
+                                                    border-radius: 10px;
+                                                    padding: 6px 12px;
+                                                    font-size: 14px;
+                                                    color: #333;
+                                                    }
+
+                                                    QPushButton:hover {
+                                                    background-color: #e6e6e6;
+                                                    border: 1px solid #bbb;
+                                                    }
+
+                                                    QPushButton:pressed {
+                                                    background-color: #dcdcdc;
+                                                    border: 1px solid #999;
+                                                    }</string>
+           </property>
+           <property name="text">
+            <string>Refresh</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="connectBtn">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+                                                    background-color: #f5f5f5;
+                                                    border: 1px solid #ccc;
+                                                    border-radius: 10px;
+                                                    padding: 6px 12px;
+                                                    font-size: 14px;
+                                                    color: #333;
+                                                    }
+
+                                                    QPushButton:hover {
+                                                    background-color: #e6e6e6;
+                                                    border: 1px solid #bbb;
+                                                    }
+
+                                                    QPushButton:pressed {
+                                                    background-color: #dcdcdc;
+                                                    border: 1px solid #999;
+                                                    }</string>
+           </property>
+           <property name="text">
+            <string>Connect</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
     </item>
     <item row="1" column="0">
      <spacer name="horizontalSpacer_12">
@@ -3182,7 +3659,7 @@
      <x>0</x>
      <y>0</y>
      <width>2673</width>
-     <height>25</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

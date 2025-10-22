@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     applyShadow(ui->CommBox);
     applyShadow(ui->analogInputBox);
     applyShadow(ui->indicatorsgroupBox);
+    applyShadow(ui->gridGroupBox);
     // applyShadow(ui->chargingBox_2);
 
     QPixmap logo(":/Resources/logo_white_bg.png");
@@ -240,6 +241,38 @@ void MainWindow::updateAll(){
 
     ui->b6_5vVoltage->display(formatFloat(static_cast<float>(dataToShow.b6_5VoltVoltage) / 1000));
     ui->b6_5vCurrent->display(formatFloat(static_cast<float>(dataToShow.b6_5VoltCurrent) / 1000));
+
+    // Power all and total
+    ui->avionicBatteryPower->display(formatFloat((static_cast<float>(dataToShow.avionicBatteryVoltage) / 1000.0f) * (static_cast<float>(dataToShow.avionicBatteryCurrent) / 1000.0f)));
+    ui->GeneratorPower->display(formatFloat((static_cast<float>(dataToShow.generatorVoltage) / 1000.0f) * (static_cast<float>(dataToShow.generatorCurrent) / 1000.0f)));
+    ui->groundSupplyPower->display(formatFloat((static_cast<float>(dataToShow.groundSupplyVoltage) / 1000.0f) * (static_cast<float>(dataToShow.groundSupplyCurrent) / 1000.0f)));
+    ui->vBusPower->display(formatFloat((static_cast<float>(dataToShow.vBusVoltage) / 1000.0f) * (static_cast<float>(dataToShow.vBusCurrent) / 1000.0f)));
+    ui->b1_24vPower->display(formatFloat((static_cast<float>(dataToShow.b1_24VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b1_24VoltCurrent) / 1000.0f)));
+    ui->b1A_24vPower->display(formatFloat((static_cast<float>(dataToShow.b1A_24VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b1A_24VoltCurrent) / 1000.0f)));
+    ui->b2_8v2Power->display(formatFloat((static_cast<float>(dataToShow.b2v2_8VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b2v2_8VoltCurrent) / 1000.0f)));
+    ui->b3_8v2Power->display(formatFloat((static_cast<float>(dataToShow.b3v2_8VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b3v2_8VoltCurrent) / 1000.0f)));
+    ui->b3a_8v2Power->display(formatFloat((static_cast<float>(dataToShow.b3av2_8VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b3av2_8VoltCurrent) / 1000.0f)));
+    ui->b4_12vPower->display(formatFloat((static_cast<float>(dataToShow.b4_12VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b4_12VoltCurrent) / 1000.0f)));
+    ui->b4a_12vPower->display(formatFloat((static_cast<float>(dataToShow.b4a_12VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b4a_12VoltCurrent) / 1000.0f)));
+    ui->b5_24vPower->display(formatFloat((static_cast<float>(dataToShow.b5_24VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b5_24VoltCurrent) / 1000.0f)));
+    ui->b5a_24vPower->display(formatFloat((static_cast<float>(dataToShow.b5a_24VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b5a_24VoltCurrent) / 1000.0f)));
+    ui->b5b_24vPower->display(formatFloat((static_cast<float>(dataToShow.b5b_24VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b5b_24VoltCurrent) / 1000.0f)));
+    ui->b6_5vPower->display(formatFloat((static_cast<float>(dataToShow.b6_5VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b6_5VoltCurrent) / 1000.0f)));
+    ui->totalOutputPower->display(formatFloat(
+        ((static_cast<float>(dataToShow.b1_24VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b1_24VoltCurrent) / 1000.0f)) +
+        ((static_cast<float>(dataToShow.b1A_24VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b1A_24VoltCurrent) / 1000.0f)) +
+        ((static_cast<float>(dataToShow.b2v2_8VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b2v2_8VoltCurrent) / 1000.0f)) +
+        ((static_cast<float>(dataToShow.b3v2_8VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b3v2_8VoltCurrent) / 1000.0f)) +
+        ((static_cast<float>(dataToShow.b3av2_8VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b3av2_8VoltCurrent) / 1000.0f)) +
+        ((static_cast<float>(dataToShow.b4_12VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b4_12VoltCurrent) / 1000.0f)) +
+        ((static_cast<float>(dataToShow.b4a_12VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b4a_12VoltCurrent) / 1000.0f)) +
+        ((static_cast<float>(dataToShow.b5_24VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b5_24VoltCurrent) / 1000.0f)) +
+        ((static_cast<float>(dataToShow.b5a_24VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b5a_24VoltCurrent) / 1000.0f)) +
+        ((static_cast<float>(dataToShow.b5b_24VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b5b_24VoltCurrent) / 1000.0f)) +
+        ((static_cast<float>(dataToShow.b6_5VoltVoltage) / 1000.0f) * (static_cast<float>(dataToShow.b6_5VoltCurrent) / 1000.0f))
+        ));
+
+
 
     ui->ain_1Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn1Voltage) / 1000));
     ui->ain_2Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn2Voltage) / 1000));
