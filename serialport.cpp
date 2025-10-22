@@ -151,6 +151,9 @@ Packet SerialPort::DeSerializePacket()
     pkt.spareFlag4      = flags2 & 0x80;
 
     // --- Engine & Diagnostics ---
+
+    stream >> pkt.boostTempSensor1;
+    stream >> pkt.boostTempSensor2;
     stream >> pkt.engineRPM;
     stream >> pkt.commandCounter;
     stream >> pkt.lastAppliedCommand;
@@ -161,8 +164,6 @@ Packet SerialPort::DeSerializePacket()
     stream >> pkt.crcErrorCounter;
     stream >> pkt.serialTimeoutErrorCounter;
     stream >> pkt.frameLengthMismatchErrorCounter;
-    stream >> pkt.boostTempSensor1;
-    stream >> pkt.boostTempSensor2;
 
     return pkt;
 }

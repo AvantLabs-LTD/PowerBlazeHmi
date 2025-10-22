@@ -117,7 +117,10 @@ enum CommandStatus{
 
 struct Command {
     CommandID id;          // which system this command targets
-    CommandStatus status;  // On or Off
+    int status;  // On or Off
+
+    Command(CommandID cmdId, int cmdStatus)
+        : id(cmdId), status(cmdStatus) {}
 
     Command(CommandID cmdId, CommandStatus cmdStatus)
         : id(cmdId), status(cmdStatus) {}

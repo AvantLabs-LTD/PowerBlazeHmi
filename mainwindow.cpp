@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QMessageBox>
 
 #include <QGraphicsOpacityEffect>
 
@@ -36,8 +37,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowIcon(icon);
 
     this->showMaximized();
-    this->setWindowTitle("PowerBlazev1.0.1");
-    ui->versionLabel->setText("v1.0.1");
+    this->setWindowTitle("PowerBlazev1.0.2");
+    ui->versionLabel->setText("v1.0.2");
 
 
     timeTimer = new QTimer(this);
@@ -277,7 +278,7 @@ void MainWindow::updateAll(){
     ui->ain_1Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn1Voltage) / 1000));
     ui->ain_2Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn2Voltage) / 1000));
     ui->ain_3Voltage->display(formatFloat(static_cast<float>(dataToShow.aIn3Voltage) / 1000));
-    ui->temperature->display(formatFloat(static_cast<float>(dataToShow.tempSensorInternal) / 100));
+    ui->temperature->display(formatFloat(static_cast<float>(dataToShow.tempSensorInternal) / 1000));
     ui->boostTemp1->display(formatFloat(static_cast<float>(dataToShow.boostTempSensor1) / 100));
     ui->boostTemp2->display(formatFloat(static_cast<float>(dataToShow.boostTempSensor2) / 100));
 
@@ -674,8 +675,28 @@ void MainWindow::on_dout2Checkbox_clicked()
 
 void MainWindow::on_pwm1Checkbox_clicked()
 {
+    QString value = ui->pwmLineEdit->text();
+    bool ok;
+    int pwmValue = value.toInt(&ok);  // Try to convert to int
+
+    if (!ok) {
+        QMessageBox::warning(this, "Invalid Input",
+                             "Please enter a valid integer value for PWM.");
+        return;
+    }
+
+    pwmValue /= 10;  // Divide by 10
+
+    if (pwmValue < 1 || pwmValue > 255) {
+        QMessageBox::warning(this, "Out of Range",
+                             "PWM value must be between 10 and 2550.");
+        return;
+    }
+
+    qDebug() << "PWM value after scaling:" << pwmValue;
+
     if(ui->pwm1Checkbox->checkState() == Qt::Checked){
-        Command cmd(PWM_1, On);
+        Command cmd(PWM_1, pwmValue);
         sendCommand(cmd);
     }else{
         Command cmd(PWM_1, Off);
@@ -687,8 +708,27 @@ void MainWindow::on_pwm1Checkbox_clicked()
 
 void MainWindow::on_pwm2Checkbox_clicked()
 {
+    QString value = ui->pwmLineEdit->text();
+    bool ok;
+    int pwmValue = value.toInt(&ok);  // Try to convert to int
+
+    if (!ok) {
+        QMessageBox::warning(this, "Invalid Input",
+                             "Please enter a valid integer value for PWM.");
+        return;
+    }
+
+    pwmValue /= 10;  // Divide by 10
+
+    if (pwmValue < 1 || pwmValue > 255) {
+        QMessageBox::warning(this, "Out of Range",
+                             "PWM value must be between 10 and 2550.");
+        return;
+    }
+
+    qDebug() << "PWM value after scaling:" << pwmValue;
     if(ui->pwm2Checkbox->checkState() == Qt::Checked){
-        Command cmd(PWM_2, On);
+        Command cmd(PWM_2, pwmValue);
         sendCommand(cmd);
     }else{
         Command cmd(PWM_2, Off);
