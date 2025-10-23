@@ -37,8 +37,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowIcon(icon);
 
     this->showMaximized();
-    this->setWindowTitle("PowerBlazev1.0.2");
-    ui->versionLabel->setText("v1.0.2");
+    this->setWindowTitle("PowerBlazev1.0.4");
+    ui->versionLabel->setText("v1.0.4");
 
 
     timeTimer = new QTimer(this);
@@ -114,6 +114,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->debugV4->display(formatFloat(0));
     ui->debugV5->display(formatFloat(0));
     ui->debugV6->display(formatFloat(0));
+    ui->boostPktCounter->display(0);
 
     // ui->debugInfoBtn->setIcon(QIcon(":/Resources/searching.png"));
     // ui->spareVolt1Disp->setVisible(false);
@@ -299,6 +300,7 @@ void MainWindow::updateAll(){
     ui->crcErrorCountDisp->display(dataToShow.crcErrorCounter);
     ui->serialTimeoutErrorCount->display(dataToShow.serialTimeoutErrorCounter);
     ui->lengthMismatchErrorCount->display(dataToShow.frameLengthMismatchErrorCounter);
+    ui->boostPktCounter->display(static_cast<int>(dataToShow.boostPktCounter));
 
 
     dataToShow.b1a_24V_status ? ui->b1aCheckbox->setCheckState(Qt::Checked) : ui->b1aCheckbox->setCheckState(Qt::Unchecked);
@@ -637,10 +639,10 @@ void MainWindow::on_b5aCheckBox_clicked()
 void MainWindow::on_b5bCheckBox_clicked()
 {
     if(ui->b5bCheckBox->checkState() == Qt::Checked){
-        Command cmd(b5A_24V, On);
+        Command cmd(b5b_24V, On);
         sendCommand(cmd);
     }else{
-        Command cmd(b5A_24V, Off);
+        Command cmd(b5b_24V, Off);
         sendCommand(cmd);
 
     }
@@ -708,7 +710,7 @@ void MainWindow::on_pwm1Checkbox_clicked()
 
 void MainWindow::on_pwm2Checkbox_clicked()
 {
-    QString value = ui->pwmLineEdit->text();
+    QString value = ui->pwm2LineEdit->text();
     bool ok;
     int pwmValue = value.toInt(&ok);  // Try to convert to int
 
@@ -775,4 +777,5 @@ void MainWindow::on_batSwitchCheckbox_clicked()
 
     }
 }
+
 

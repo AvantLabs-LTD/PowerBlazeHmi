@@ -67,6 +67,7 @@ private slots:
 
     void on_batSwitchCheckbox_clicked();
 
+
 private:
     Ui::MainWindow *ui;
     SerialPort m_serialPort;

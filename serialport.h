@@ -92,6 +92,7 @@ struct Packet
 
     uint16_t boostTempSensor1;
     uint16_t boostTempSensor2;
+    uint32_t boostPktCounter;
 };
 
 enum CommandID{

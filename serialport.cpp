@@ -164,6 +164,7 @@ Packet SerialPort::DeSerializePacket()
     stream >> pkt.crcErrorCounter;
     stream >> pkt.serialTimeoutErrorCounter;
     stream >> pkt.frameLengthMismatchErrorCounter;
+    stream >> pkt.boostPktCounter;
 
     return pkt;
 }
