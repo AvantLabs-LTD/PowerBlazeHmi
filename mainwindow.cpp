@@ -637,10 +637,10 @@ void MainWindow::on_b5aCheckBox_clicked()
 void MainWindow::on_b5bCheckBox_clicked()
 {
     if(ui->b5bCheckBox->checkState() == Qt::Checked){
-        Command cmd(b5A_24V, On);
+        Command cmd(b5b_24V, On);
         sendCommand(cmd);
     }else{
-        Command cmd(b5A_24V, Off);
+        Command cmd(b5b_24V, Off);
         sendCommand(cmd);
 
     }
