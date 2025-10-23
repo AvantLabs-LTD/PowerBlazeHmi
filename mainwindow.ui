@@ -305,10 +305,16 @@
          </item>
          <item row="7" column="0">
           <widget class="QLabel" name="label_23">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>60</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>190</width>
-             <height>60</height>
+             <height>140</height>
             </size>
            </property>
            <property name="text">
@@ -327,7 +333,7 @@
            <property name="minimumSize">
             <size>
              <width>150</width>
-             <height>0</height>
+             <height>60</height>
             </size>
            </property>
            <property name="maximumSize">
