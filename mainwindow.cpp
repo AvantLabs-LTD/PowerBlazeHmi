@@ -37,8 +37,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowIcon(icon);
 
     this->showMaximized();
-    this->setWindowTitle("PowerBlazev1.0.5");
-    ui->versionLabel->setText("v1.0.5");
+    this->setWindowTitle("PowerBlazev1.0.6");
+    ui->versionLabel->setText("v1.0.6");
 
 
     timeTimer = new QTimer(this);
@@ -488,6 +488,7 @@ QString MainWindow::getCSVHeaders() {
     QStringList headers;
 
     headers
+        << "Time Stamp"
         << "Packet Counter"
         << "Frame Time"
 
@@ -512,7 +513,7 @@ QString MainWindow::getCSVHeaders() {
         << "Analog In 1 Voltage"
         << "Analog In 2 Voltage"
         << "Analog In 3 Voltage"
-        << "Internal Temp Sensor"
+        << "Analog In 4 Voltage"
 
         // --- Debug Values ---
         << "Debug Voltage 1 (BST)"
