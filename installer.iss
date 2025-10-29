@@ -30,7 +30,7 @@ ArchitecturesInstallIn64BitMode=x64compatible
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputBaseFilename=power-blazeV1.0.5
+OutputBaseFilename=power-blazeV1.0.8
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
