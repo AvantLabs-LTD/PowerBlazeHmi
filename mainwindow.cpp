@@ -37,8 +37,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowIcon(icon);
 
     this->showMaximized();
-    this->setWindowTitle("PowerBlazev1.0.6");
-    ui->versionLabel->setText("v1.0.6");
+    this->setWindowTitle("PowerBlazev1.0.8");
+    ui->versionLabel->setText("v1.0.8");
 
 
     timeTimer = new QTimer(this);
@@ -473,6 +473,8 @@ QString MainWindow::stateparamsToCsv() {
            << dataToShow.engineRPM << ","
            << dataToShow.commandCounter << ","
            << dataToShow.lastAppliedCommand << ","
+           << dataToShow.boostTempSensor1 << ","
+           << dataToShow.boostTempSensor2 << ","
 
            // --- Error Counters ---
            << dataToShow.packetErrorCounter << ","
@@ -499,9 +501,9 @@ QString MainWindow::getCSVHeaders() {
         << "VBus Voltage" << "VBus Current"
         << "B1 24V Voltage" << "B1 24V Current"
         << "B1A 24V Voltage" << "B1A 24V Current"
-        << "B2 2.8V Voltage" << "B2 2.8V Current"
-        << "B3 2.8V Voltage" << "B3 2.8V Current"
-        << "B3A 2.8V Voltage" << "B3A 2.8V Current"
+        << "B2 8.2V Voltage" << "B2 2.8V Current"
+        << "B3 8.2V Voltage" << "B3 2.8V Current"
+        << "B3A 8.2V Voltage" << "B3A 2.8V Current"
         << "B4 12V Voltage" << "B4 12V Current"
         << "B4A 12V Voltage" << "B4A 12V Current"
         << "B5 24V Voltage" << "B5 24V Current"
@@ -546,6 +548,8 @@ QString MainWindow::getCSVHeaders() {
         << "Engine RPM"
         << "Command Counter"
         << "Last Applied Command"
+        << "PMU Temp"
+        << "Temp"
 
         // --- Error Counters ---
         << "Packet Error Counter"
